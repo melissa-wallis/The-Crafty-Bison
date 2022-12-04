@@ -1,20 +1,16 @@
-import { Outlet, Route, Routes } from "react-router-dom"
-import { AllItems } from "../items/AllItems"
-
+import { CustomerViews } from "./CustomerViews"
+import { EmployeeViews } from "./EmployeeViews"
 
 export const ApplicationViews = () => {
-	return (
-        <Routes>
-            <Route path="/" element={
-                <>
-                    <h1>The Crafty Bison</h1>
 
-                    <Outlet />
-                </>
-            }>
-
-                <Route path="items" element={ <AllItems /> } />
-            </Route>
-        </Routes>
-    )
+	const localBisonUser = localStorage.getItem("bison_user")
+    const bisonUserObject = JSON.parse(localBisonUser)
+    
+    if (bisonUserObject.staff) {
+        //return employee view
+        return <EmployeeViews />
+    } else {
+        //return customer view
+        return <CustomerViews />
+    }
 }
