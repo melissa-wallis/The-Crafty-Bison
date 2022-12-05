@@ -21,7 +21,7 @@ export const NavBar = () => {
         </li>
 
         <li className="navbar__item">
-        <Link className="navbar__link" to="/allItems">All Items</Link>
+        <Link className="navbar__link" to="/viewAll">View All</Link>
         </li>
         
         <li className="navbar__item">

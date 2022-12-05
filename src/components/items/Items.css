@@ -12,6 +12,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 1rem;
+
 }
 
 .item-img {
@@ -20,10 +22,35 @@
     margin: 1rem;
     box-shadow: 4px 3px 4px gray;
     cursor: pointer;
+    border-radius: 1rem;
+    font: 10pt "Helvetica Neue", Helvetica, arial;
 }
 
 .item-name {
-    font-size: 1rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font: 12pt "Helvetica Neue", Helvetica, arial;
+    padding: 5pt
 }
+
+.item-edit {
+    font: 10pt "Helvetica Neue", Helvetica, arial;
+    text-decoration: none;
+    color: black;
+}
+
+.item-edit:hover {
+    text-decoration: underline;
+}
+
+.item-delete {
+    font: 10pt "Helvetica Neue", Helvetica, arial;
+    text-decoration: none;
+    color: black;
+}
+
+.item-delete:hover {
+    text-decoration: underline;
+}
+
+/*item details styling (stretch goal) */
+
 

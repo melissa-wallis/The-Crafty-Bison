@@ -1,7 +1,7 @@
 //"homepage" displays all items before filtering
 
 import { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import "./Items.css"
 
 export const AllItems = () => {
@@ -18,7 +18,12 @@ export const AllItems = () => {
         },
         []
         )
-        
+    
+    //conditionally render a popup of the item edit form here
+    //toggle from F (default) to T
+    //if T (aka button clicked): show edit form
+
+
     const navigateToItemDetails = (itemId) => {
         navigate(`/${itemId}`)
     }
@@ -37,6 +42,8 @@ export const AllItems = () => {
                 }}
                 />
                 <div className="item-name">{itemObj.name}</div>
+                <Link className="item-edit">Edit</Link>
+                <Link className="item-delete">Delete</Link>
             </div>
             )
         })}
