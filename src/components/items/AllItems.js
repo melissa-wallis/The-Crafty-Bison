@@ -1,9 +1,11 @@
+//"homepage" displays all items before filtering
+
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-
+import "./Items.css"
 
 export const AllItems = () => {
-    const [items, setItems] = useState([]) //all items original state
+    const [items, setItems] = useState([])
     const navigate = useNavigate()
     
     useEffect(
@@ -17,7 +19,6 @@ export const AllItems = () => {
         []
         )
         
-    
     const navigateToItemDetails = (itemId) => {
         navigate(`/${itemId}`)
     }

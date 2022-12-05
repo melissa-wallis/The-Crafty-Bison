@@ -15,6 +15,7 @@ export const Bison = () => {
 		<Route path="*" element={
 			<Authorized>
 				<>
+				<h1>The Crafty Bison</h1>
 					<NavBar />
                     <ApplicationViews/>
 				</>

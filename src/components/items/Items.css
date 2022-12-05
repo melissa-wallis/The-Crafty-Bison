@@ -1,4 +1,5 @@
-/* Items Styling */
+/*items styling*/
+
 .items-container {
     display: flex;
     flex-wrap: wrap;
@@ -14,8 +15,8 @@
 }
 
 .item-img {
-    height: 20rem;
-    width: 20rem;
+    height: 15rem;
+    width: 15rem;
     margin: 1rem;
     box-shadow: 4px 3px 4px gray;
     cursor: pointer;
@@ -26,4 +27,3 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Form Styling */
