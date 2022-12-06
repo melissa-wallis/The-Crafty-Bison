@@ -11,7 +11,7 @@ export const AddItemForm = () => {
     const [item, update] = useState({
         name: "",
         description: "",
-        dropdown: "",
+        type: "",
         price: "",
 
     })
@@ -42,7 +42,7 @@ export const AddItemForm = () => {
                         required autoFocus
                         type="text"
                         className="form-control"
-                        placeholder="Item Description"
+                        placeholder="Item Name"
                         value={item.name}
                         onChange={
                             (evt) => {
@@ -54,13 +54,30 @@ export const AddItemForm = () => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="description">Name:</label>
+                    <label htmlFor="description">Description:</label>
                     <input
                         required autoFocus
                         type="text"
                         className="form-control"
                         placeholder="Item Description"
-                        value={item.name}
+                        value={item.description}
+                        onChange={
+                            (evt) => {
+                                const copy = {...item}
+                                copy.name = evt.target.value
+                            }
+                        } />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="price">Price:</label>
+                    <input
+                        required autoFocus
+                        type="text"
+                        className="form-control"
+                        placeholder="Item Price"
+                        value={item.price}
                         onChange={
                             (evt) => {
                                 const copy = {...item}
