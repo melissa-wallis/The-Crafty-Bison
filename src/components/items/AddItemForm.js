@@ -29,7 +29,7 @@ export const AddItemForm = () => {
         // TODO: Create the object to be saved to the API
 
 
-        // TODO: Perform the fetch() to POST the object to the API
+        // TODO: Peform the fetch() to POST the object to the API
     }
 
     return (
