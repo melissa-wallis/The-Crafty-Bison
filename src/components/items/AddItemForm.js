@@ -14,7 +14,7 @@ export const AddItemForm = () => {
     })
 
 
-    const [itemType, setItemType] = useState([])
+    const [itemTypes, setItemType] = useState([])
 
     const navigate = useNavigate()
 
@@ -112,6 +112,31 @@ export const AddItemForm = () => {
                             update(copy)
                         }}
                     />
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <div className="form-group">
+                    <div>Category: </div>
+                    {itemTypes.map((typeObj) => {
+                        return (
+                            <div key={typeObj.id} className="radio">
+                                <label>
+                                    <input
+                                        type="radio"
+                                        value={typeObj.id}
+                                        checked={itemTypes.itemTypeId === typeObj.id}
+                                        onChange={(event) => {
+                                            const copy = { ...item }
+                                            copy.itemTypeId = parseInt(event.target.value)
+                                            update(copy)
+                                        }}
+                                    />
+                                    {typeObj.type}
+                                </label>
+                            </div>
+                        )
+                    })}
                 </div>
             </fieldset>
 
