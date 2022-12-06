@@ -1,7 +1,7 @@
 import { Routes, Route, Outlet } from "react-router-dom"
 import { AllItems } from "../items/AllItems"
 import { CrossStitchItems } from "../items/CrossStitchItems"
-import { ItemForm } from "../items/EditItemForm"
+import { ItemForm } from "../items/AddItemForm"
 import { EmbroideryItems } from "../items/EmbroideryItems"
 import { MiniatureItems } from "../items/MiniatureItems"
 import { WallHangingItems } from "../items/WallHangingItems"
