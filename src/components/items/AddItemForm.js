@@ -1,40 +1,44 @@
 //for editing existing items
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
+//set default properties for object
 export const AddItemForm = () => {
-    /*
-        TODO: Add the correct default properties to the
-        initial state object
-    */
     const [item, update] = useState({
         name: "",
         description: "",
-        type: "",
+        type: 0,
         price: "",
-
+        image: "",
     })
-    /*
-        TODO: Use the useNavigation() hook so you can redirect
-        the user to the ticket list
-    */
 
-    const localHoneyUser = localStorage.getItem("honey_user")
-    const honeyUserObject = JSON.parse(localHoneyUser)
 
-    const handleSaveButtonClick = (event) => {
-        event.preventDefault()
+    const [itemType, setItemType] = useState([])
 
-        // TODO: Create the object to be saved to the API
+    const navigate = useNavigate()
 
+
+    //pulls itemTypes from API to update itemType state//
+    useEffect(() => {
+        fetch(`http://localhost:8088/itemTypes`)
+            .then((res) => res.json())
+            .then((itemTypesData) => {
+                setItemType(itemTypesData)
+            })
+    }, [])
+
+    //function that runs when List Item button is clicked
+    const handleSaveItem = (evt) => {
+        evt.preventDefault()
 
         // TODO: Peform the fetch() to POST the object to the API
     }
 
     return (
-        <form className="ticketForm">
-            <h2 className="ticketForm__title">Add Item Details</h2>
+        <form className="item-form">
+            <h2 className="item-form-title">Add Item to Store</h2>
+
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="name">Name:</label>
@@ -42,16 +46,18 @@ export const AddItemForm = () => {
                         required autoFocus
                         type="text"
                         className="form-control"
-                        placeholder="Item Name"
+                        placeholder="Item name"
                         value={item.name}
                         onChange={
                             (evt) => {
                                 const copy = {...item}
                                 copy.name = evt.target.value
-                            }
-                        } />
+                                update(copy)
+                            }}
+                        />
                 </div>
             </fieldset>
+
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="description">Description:</label>
@@ -59,16 +65,18 @@ export const AddItemForm = () => {
                         required autoFocus
                         type="text"
                         className="form-control"
-                        placeholder="Item Description"
+                        placeholder="Item description"
                         value={item.description}
                         onChange={
                             (evt) => {
                                 const copy = {...item}
                                 copy.name = evt.target.value
-                            }
-                        } />
+                                update(copy)
+                            }}
+                        />
                 </div>
             </fieldset>
+
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="price">Price:</label>
@@ -76,16 +84,37 @@ export const AddItemForm = () => {
                         required autoFocus
                         type="text"
                         className="form-control"
-                        placeholder="Item Price"
+                        placeholder="Item price"
                         value={item.price}
                         onChange={
                             (evt) => {
                                 const copy = {...item}
-                                copy.name = evt.target.value
-                            }
-                        } />
+                                copy.price = evt.target.value
+                                update(copy)
+                            }}
+                        />
                 </div>
             </fieldset>
+
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="imgUrl">Image URL: </label>
+                    <input
+                        required
+                        id="imgUrl"
+                        type="text"
+                        className="form-control"
+                        placeholder="example.com"
+                        value={item.image}
+                        onChange={(event) => {
+                            const copy = { ...item }
+                            copy.image = event.target.value
+                            update(copy)
+                        }}
+                    />
+                </div>
+            </fieldset>
+
             <button className="btn btn-primary">
                 List Item
             </button>

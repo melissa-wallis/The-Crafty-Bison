@@ -13,7 +13,6 @@
     flex-direction: column;
     align-items: center;
     border-radius: 1rem;
-
 }
 
 .item-img {
@@ -50,6 +49,10 @@
 .item-delete:hover {
     text-decoration: underline;
 }
+
+/*Form styling*/
+
+
 
 /*item details styling (stretch goal) */
 
