@@ -28,7 +28,6 @@ export const AddItemForm = () => {
     const handleSaveItem = (evt) => {
     evt.preventDefault();
 
-
     {
         fetch('http://localhost:8088/items', {
             method: "POST",
@@ -64,7 +63,6 @@ export const AddItemForm = () => {
             />
         </div>
         </fieldset>
-
         <fieldset>
         <div className="form-group">
             <label htmlFor="description">Description:</label>
@@ -81,7 +79,6 @@ export const AddItemForm = () => {
             />
         </div>
         </fieldset>
-
         <fieldset>
         <div className="form-group">
             <label htmlFor="price">Price:</label>
@@ -98,7 +95,6 @@ export const AddItemForm = () => {
             />
         </div>
         </fieldset>
-
         <fieldset>
         <div className="form-group">
             <label htmlFor="imgUrl">Image URL: </label>
@@ -116,7 +112,6 @@ export const AddItemForm = () => {
             />
         </div>
         </fieldset>
-
         <fieldset>
         <div className="form-group">
             <select onChange={(evt) => {
@@ -132,7 +127,6 @@ export const AddItemForm = () => {
             </select>
         </div>
         </fieldset>
-
         <button className="btn"
         onClick={(evt) => {
             handleSaveItem(evt)
