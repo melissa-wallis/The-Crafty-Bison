@@ -13,7 +13,6 @@
     flex-direction: column;
     align-items: center;
     border-radius: 1rem;
-
 }
 
 .item-img {
@@ -37,18 +36,10 @@
     color: black;
 }
 
-.item-edit:hover {
-    text-decoration: underline;
-}
-
 .item-delete {
     font: 10pt "Helvetica Neue", Helvetica, arial;
     text-decoration: none;
     color: black;
-}
-
-.item-delete:hover {
-    text-decoration: underline;
 }
 
 /*item details styling (stretch goal) */
