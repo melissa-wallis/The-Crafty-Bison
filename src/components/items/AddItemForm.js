@@ -17,7 +17,7 @@ export const AddItemForm = () => {
 
     const navigate = useNavigate();
 
-  //pulls itemTypes from API to update itemType state//
+  //pulls itemTypes from API to update itemTypes state//
     useEffect(() => {
     fetch(`http://localhost:8088/itemTypes`)
         .then((res) => res.json())
@@ -26,7 +26,6 @@ export const AddItemForm = () => {
         });
     }, []);
 
-    console.log(itemTypes)
     //function that runs when List Item button is clicked
     const handleSaveItem = (evt) => {
     evt.preventDefault();
@@ -34,8 +33,7 @@ export const AddItemForm = () => {
     {
         fetch('http://localhost:8088/items', {
             method: "POST",
-            headers: {
-            "Content-Type": "application/json",
+            headers: {"Content-Type": "application/json",
         },
         body: JSON.stringify(item),
         })
@@ -46,9 +44,6 @@ export const AddItemForm = () => {
         }
     }
 
-    
-    
-
     return (
     <form className="item-form">
         <h2 className="item-form-title">Add Item to Store</h2>
@@ -57,8 +52,7 @@ export const AddItemForm = () => {
         <div className="form-group">
             <label htmlFor="name">Name:</label>
             <input
-            required
-            autoFocus
+            required autoFocus
             type="text"
             className="form-control"
             placeholder="Item name"
@@ -76,8 +70,7 @@ export const AddItemForm = () => {
         <div className="form-group">
             <label htmlFor="description">Description:</label>
             <input
-            required
-            autoFocus
+            required autoFocus
             type="text"
             className="form-control"
             placeholder="Item description"
@@ -94,8 +87,7 @@ export const AddItemForm = () => {
         <div className="form-group">
             <label htmlFor="price">Price:</label>
             <input
-            required
-            autoFocus
+            required autoFocus
             type="text"
             className="form-control"
             placeholder="Item price"
@@ -117,45 +109,32 @@ export const AddItemForm = () => {
             type="text"
             className="form-control"
             placeholder="example.com"
-            onChange={(event) => {
+            onChange={(evt) => {
                 const copy = { ...item };
-                copy.image = event.target.value;
+                copy.image = evt.target.value;
                 update(copy);
             }}
             />
         </div>
         </fieldset>
 
-    
-{
-
-/* 
         <fieldset>
         <div className="form-group">
-            <div>Category: </div>
-            {itemTypes.map((typeObj) => {
-            return (
-                <div key={typeObj.id} className="radio">
-                <label>
-                    <input
-                    type="radio"
-                    value={typeObj.id}
-                    //checked={itemTypes.itemTypeId === typeObj.id}
-                    onChange={(event) => {
-                        const copy = { ...item };
-                        copy.itemTypeId = parseInt(event.target.value);
-                        update(copy);
-                    }}
-                    />
-                    {typeObj.type}
-                </label>
-                </div>
-            );
-            })}
+            <select onChange={update}>
+                <option value={0}>Choose a Category</option>
+                {itemTypes.map((item) =>
+                <option key={`itemType--${item.id}`} value={item.id}>{item.type}</option>
+                )
+                }
+            </select>
         </div>
-        </fieldset> */}
+        </fieldset>
 
-        <button className="btn btn-primary">List Item</button>
+        <button className="btn"
+        onClick={(evt) => {
+            handleSaveItem(evt)
+        }}
+        >List Item</button>
     </form>
     );
 };
