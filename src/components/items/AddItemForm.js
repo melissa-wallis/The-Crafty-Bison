@@ -1,148 +1,161 @@
 //for editing existing items
 
-import { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 //set default properties for object
 export const AddItemForm = () => {
     const [item, update] = useState({
-        name: "",
-        description: "",
-        type: 0,
-        price: "",
-        image: "",
-    })
+    name: "",
+    description: "",
+    type: 0,
+    price: "",
+    image: "",
+    });
 
+    const [itemTypes, setItemType] = useState([]);
 
-    const [itemTypes, setItemType] = useState([])
+    const navigate = useNavigate();
 
-    const navigate = useNavigate()
-
-
-    //pulls itemTypes from API to update itemType state//
+  //pulls itemTypes from API to update itemType state//
     useEffect(() => {
-        fetch(`http://localhost:8088/itemTypes`)
-            .then((res) => res.json())
-            .then((itemTypesData) => {
-                setItemType(itemTypesData)
-            })
-    }, [])
+    fetch(`http://localhost:8088/itemTypes`)
+        .then((res) => res.json())
+        .then((itemTypesData) => {
+        setItemType(itemTypesData);
+        });
+    }, []);
 
+    console.log(itemTypes)
     //function that runs when List Item button is clicked
     const handleSaveItem = (evt) => {
-        evt.preventDefault()
+    evt.preventDefault();
 
-        // TODO: Peform the fetch() to POST the object to the API
+    {
+        fetch('http://localhost:8088/items', {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(item),
+        })
+        .then(response => response.json())
+        .then(() => {
+            navigate('/')
+        })
+        }
     }
 
+    
+    
+
     return (
-        <form className="item-form">
-            <h2 className="item-form-title">Add Item to Store</h2>
+    <form className="item-form">
+        <h2 className="item-form-title">Add Item to Store</h2>
 
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="name">Name:</label>
-                    <input
-                        required autoFocus
-                        type="text"
-                        className="form-control"
-                        placeholder="Item name"
-                        value={item.name}
-                        onChange={
-                            (evt) => {
-                                const copy = {...item}
-                                copy.name = evt.target.value
-                                update(copy)
-                            }}
-                        />
-                </div>
-            </fieldset>
+        <fieldset>
+        <div className="form-group">
+            <label htmlFor="name">Name:</label>
+            <input
+            required
+            autoFocus
+            type="text"
+            className="form-control"
+            placeholder="Item name"
 
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="description">Description:</label>
-                    <input
-                        required autoFocus
-                        type="text"
-                        className="form-control"
-                        placeholder="Item description"
-                        value={item.description}
-                        onChange={
-                            (evt) => {
-                                const copy = {...item}
-                                copy.name = evt.target.value
-                                update(copy)
-                            }}
-                        />
-                </div>
-            </fieldset>
+            onChange={(evt) => {
+                const copy = { ...item };
+                copy.name = evt.target.value;
+                update(copy);
+            }}
+            />
+        </div>
+        </fieldset>
 
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="price">Price:</label>
-                    <input
-                        required autoFocus
-                        type="text"
-                        className="form-control"
-                        placeholder="Item price"
-                        value={item.price}
-                        onChange={
-                            (evt) => {
-                                const copy = {...item}
-                                copy.price = evt.target.value
-                                update(copy)
-                            }}
-                        />
-                </div>
-            </fieldset>
+        <fieldset>
+        <div className="form-group">
+            <label htmlFor="description">Description:</label>
+            <input
+            required
+            autoFocus
+            type="text"
+            className="form-control"
+            placeholder="Item description"
+            onChange={(evt) => {
+                const copy = { ...item };
+                copy.name = evt.target.value;
+                update(copy);
+            }}
+            />
+        </div>
+        </fieldset>
 
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="imgUrl">Image URL: </label>
+        <fieldset>
+        <div className="form-group">
+            <label htmlFor="price">Price:</label>
+            <input
+            required
+            autoFocus
+            type="text"
+            className="form-control"
+            placeholder="Item price"
+            onChange={(evt) => {
+                const copy = { ...item };
+                copy.price = evt.target.value;
+                update(copy);
+            }}
+            />
+        </div>
+        </fieldset>
+
+        <fieldset>
+        <div className="form-group">
+            <label htmlFor="imgUrl">Image URL: </label>
+            <input
+            required
+            id="imgUrl"
+            type="text"
+            className="form-control"
+            placeholder="example.com"
+            onChange={(event) => {
+                const copy = { ...item };
+                copy.image = event.target.value;
+                update(copy);
+            }}
+            />
+        </div>
+        </fieldset>
+
+    
+{
+
+/* 
+        <fieldset>
+        <div className="form-group">
+            <div>Category: </div>
+            {itemTypes.map((typeObj) => {
+            return (
+                <div key={typeObj.id} className="radio">
+                <label>
                     <input
-                        required
-                        id="imgUrl"
-                        type="text"
-                        className="form-control"
-                        placeholder="example.com"
-                        value={item.image}
-                        onChange={(event) => {
-                            const copy = { ...item }
-                            copy.image = event.target.value
-                            update(copy)
-                        }}
+                    type="radio"
+                    value={typeObj.id}
+                    //checked={itemTypes.itemTypeId === typeObj.id}
+                    onChange={(event) => {
+                        const copy = { ...item };
+                        copy.itemTypeId = parseInt(event.target.value);
+                        update(copy);
+                    }}
                     />
+                    {typeObj.type}
+                </label>
                 </div>
-            </fieldset>
-            
-            <fieldset>
-                <div className="form-group">
-                    <div>Category: </div>
-                    {itemTypes.map((typeObj) => {
-                        return (
-                            <div key={typeObj.id} className="radio">
-                                <label>
-                                    <input
-                                        type="radio"
-                                        value={typeObj.id}
-                                        checked={itemTypes.itemTypeId === typeObj.id}
-                                        onChange={(event) => {
-                                            const copy = { ...item }
-                                            copy.itemTypeId = parseInt(event.target.value)
-                                            update(copy)
-                                        }}
-                                    />
-                                    {typeObj.type}
-                                </label>
-                            </div>
-                        )
-                    })}
-                </div>
-            </fieldset>
+            );
+            })}
+        </div>
+        </fieldset> */}
 
-            <button className="btn btn-primary">
-                List Item
-            </button>
-        </form>
-    )
-}
+        <button className="btn btn-primary">List Item</button>
+    </form>
+    );
+};
