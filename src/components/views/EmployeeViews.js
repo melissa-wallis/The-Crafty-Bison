@@ -1,6 +1,8 @@
 import { Routes, Route, Outlet } from "react-router-dom"
+import { AddItemForm } from "../items/AddItemForm"
 import { AllItems } from "../items/AllItems"
 import { CrossStitchItems } from "../items/CrossStitchItems"
+import { EditItemForm } from "../items/EditItemForm"
 import { EmbroideryItems } from "../items/EmbroideryItems"
 import { MiniatureItems } from "../items/MiniatureItems"
 import { WallHangingItems } from "../items/WallHangingItems"
@@ -12,7 +14,6 @@ export const EmployeeViews = () => {
         <Routes>
             <Route path="/" element={
                 <>
-                
                     <Outlet/>
                 </>
             }>
@@ -21,6 +22,8 @@ export const EmployeeViews = () => {
                 <Route path="embroidery" element={<EmbroideryItems/>} />
                 <Route path="miniatures" element={<MiniatureItems/>} />
                 <Route path="wallHangings" element={<WallHangingItems/>} />
+                <Route path="addNew" element={<AddItemForm/>} />
+                <Route path="edit/:itemId" element={<EditItemForm/>} />
             </Route>
         </Routes>
     )

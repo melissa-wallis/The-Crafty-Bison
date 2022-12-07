@@ -42,7 +42,8 @@ export const AllItems = () => {
                 }}
                 />
                 <div className="item-name">{itemObj.name}</div>
-                <Link className="item-edit">Edit</Link>
+                <div className="item-name">{itemObj.description}</div>
+                <Link className="item-edit" to="/edit">Edit</Link>
                 <Link className="item-delete">Delete</Link>
             </div>
             )
