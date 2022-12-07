@@ -1,5 +1,4 @@
-//for editing existing items
-
+//for adding new items to the store
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -8,13 +7,12 @@ export const AddItemForm = () => {
     const [item, update] = useState({
     name: "",
     description: "",
-    type: 0,
     price: "",
     image: "",
+    itemTypeId: 0
     });
 
     const [itemTypes, setItemType] = useState([]);
-
     const navigate = useNavigate();
 
   //pulls itemTypes from API to update itemTypes state//
@@ -29,6 +27,7 @@ export const AddItemForm = () => {
     //function that runs when List Item button is clicked
     const handleSaveItem = (evt) => {
     evt.preventDefault();
+
 
     {
         fetch('http://localhost:8088/items', {
@@ -55,8 +54,8 @@ export const AddItemForm = () => {
             required autoFocus
             type="text"
             className="form-control"
+            
             placeholder="Item name"
-
             onChange={(evt) => {
                 const copy = { ...item };
                 copy.name = evt.target.value;
@@ -76,7 +75,7 @@ export const AddItemForm = () => {
             placeholder="Item description"
             onChange={(evt) => {
                 const copy = { ...item };
-                copy.name = evt.target.value;
+                copy.description = evt.target.value;
                 update(copy);
             }}
             />
@@ -120,7 +119,11 @@ export const AddItemForm = () => {
 
         <fieldset>
         <div className="form-group">
-            <select onChange={update}>
+            <select onChange={(evt) => {
+                const copy = { ...item };
+                copy.itemTypeId = parseInt(evt.target.value);
+                update(copy);
+            }}>
                 <option value={0}>Choose a Category</option>
                 {itemTypes.map((item) =>
                 <option key={`itemType--${item.id}`} value={item.id}>{item.type}</option>
