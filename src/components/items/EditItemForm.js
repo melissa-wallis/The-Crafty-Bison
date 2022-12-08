@@ -43,7 +43,7 @@ export const EditItemForm = () => {
             body: JSON.stringify(item)
         })
             .then(response => response.json())
-            .then(() => {navigate("/items")})
+            .then(() => {navigate("/")})
     }
 
     return (

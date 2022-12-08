@@ -4,10 +4,15 @@ import './NavBar.css'
 export const NavBar = () => {
     return (
     <ul className="navbar">
+
+        <li className="navbar__item">
+        <img className="navbar__link" src="../../images/BisonLogo.svg"></img>
+        </li>
+
         <li className="navbar__item">
         <Link className="navbar__link" to="/">Home</Link>
         </li>
-        
+
         <li className="navbar__item">
         <Link className="navbar__link" to="/crossStitch">Cross Stitch</Link>
         </li>
