@@ -6,7 +6,7 @@
     padding: .5rem;
 }
 
-.navbar_item {
+.navbar__item {
     flex-basis: 20%;
     list-style-type: none;
     text-align: center;

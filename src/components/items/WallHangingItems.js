@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
@@ -34,6 +33,3 @@ export const WallHangingItems = () => {
         </div>
     )
 }
-=======
-//this module will pull all items with itemTypeId = 4
->>>>>>> navbar
