@@ -13,7 +13,6 @@
     flex-direction: column;
     align-items: center;
     border-radius: 1rem;
-
 }
 
 .item-img {
@@ -31,10 +30,19 @@
     padding: 5pt
 }
 
+.item-description {
+    font: 10pt "Helvetica Neue", Helvetica, arial;
+}
+
 .item-edit {
     font: 10pt "Helvetica Neue", Helvetica, arial;
     text-decoration: none;
     color: black;
+    margin-top: 10pt
+}
+
+.item-price {
+    font: 10pt "Helvetica Neue", Helvetica, arial;
 }
 
 .item-edit:hover {
@@ -45,6 +53,7 @@
     font: 10pt "Helvetica Neue", Helvetica, arial;
     text-decoration: none;
     color: black;
+    margin-bottom: 10pt;
 }
 
 .item-delete:hover {
