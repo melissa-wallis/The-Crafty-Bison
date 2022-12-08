@@ -17,8 +17,7 @@ export const EmployeeViews = () => {
                     <Outlet/>
                 </>
             }>
-                <Route path="items" element={ <AllItems /> } />
-                {/* <Route index element={<AllItems />} /> */}
+                <Route path="/" element={ <AllItems /> } />
                 <Route path="crossStitch" element={<CrossStitchItems/>} />
                 <Route path="embroidery" element={<EmbroideryItems/>} />
                 <Route path="miniatures" element={<MiniatureItems/>} />
