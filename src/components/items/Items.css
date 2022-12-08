@@ -45,10 +45,6 @@
     font: 10pt "Helvetica Neue", Helvetica, arial;
 }
 
-.item-edit:hover {
-    text-decoration: underline;
-}
-
 .item-delete {
     font: 10pt "Helvetica Neue", Helvetica, arial;
     text-decoration: none;

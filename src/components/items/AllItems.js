@@ -18,15 +18,21 @@ export const AllItems = () => {
         },
         []
         )
-    
-    //conditionally render a popup of the item edit form here
-    //toggle from F (default) to T
-    //if T (aka button clicked): show edit form
 
-
+    //navigates to item details view
     const navigateToItemDetails = (itemId) => {
         navigate(`/${itemId}`)
     }
+
+    //edit button
+
+    //delete button 
+    const deleteButton = () => {
+        <button onClick={() => {}} className="item-delete">Delete</button>
+            }
+
+    
+    
     
     return (
         <>
