@@ -24,12 +24,10 @@ export const AddItemForm = () => {
         });
     }, []);
 
-    //function that runs when List Item button is clicked
+    //function that runs when List Item button is clicked, contains POST request
     const handleSaveItem = (evt) => {
     evt.preventDefault();
-
-    {
-        fetch('http://localhost:8088/items', {
+    {fetch('http://localhost:8088/items', {
             method: "POST",
             headers: {"Content-Type": "application/json",
         },

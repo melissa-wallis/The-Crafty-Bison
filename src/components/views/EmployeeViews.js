@@ -17,13 +17,14 @@ export const EmployeeViews = () => {
                     <Outlet/>
                 </>
             }>
-                <Route index element={<AllItems />} />
+                <Route path="items" element={ <AllItems /> } />
+                {/* <Route index element={<AllItems />} /> */}
                 <Route path="crossStitch" element={<CrossStitchItems/>} />
                 <Route path="embroidery" element={<EmbroideryItems/>} />
                 <Route path="miniatures" element={<MiniatureItems/>} />
                 <Route path="wallHangings" element={<WallHangingItems/>} />
-                <Route path="addNew" element={<AddItemForm/>} />
-                <Route path="edit/:itemId" element={<EditItemForm/>} />
+                <Route path="item/create" element={<AddItemForm/>} />
+                <Route path="items/:itemId/edit" element={<EditItemForm/>} />
             </Route>
         </Routes>
     )

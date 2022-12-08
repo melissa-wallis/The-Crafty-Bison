@@ -43,7 +43,7 @@ export const AllItems = () => {
                 />
                 <div className="item-name">{itemObj.name}</div>
                 <div className="item-name">{itemObj.description}</div>
-                <Link className="item-edit" to="/edit">Edit</Link>
+                <Link className="item-edit" to={`/items/${itemObj.id}/edit`}>Edit</Link>
                 <Link className="item-delete">Delete</Link>
             </div>
             )
