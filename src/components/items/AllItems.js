@@ -29,6 +29,8 @@ export const AllItems = () => {
     }
     
     return (
+        <>
+        <img className="hero" src="../../images/Banner.svg"></img>
         <div className="items-container">
         {items.map((itemObj) => {
             return (
@@ -50,6 +52,7 @@ export const AllItems = () => {
             )
         })}
         </div>
+        </>
     )
     }
 
