@@ -1,13 +1,33 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Styling for entire project
+/* Import the google web fonts you want to use */
+
+
+/* Navbar */
+.navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    border-radius: 1rem;
+    padding: .5rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbar__item {
+    flex-basis: 20%;
+    list-style-type: none;
+    text-align: center;
+    margin: auto;
+}
+
+.navbar__logout {
+    margin-left: auto;
+}
+
+.navbar__link {
+    text-decoration: none;
+    color: black;
+    font: 10pt "Helvetica Neue", Helvetica, arial
+}
+
+.navbar__link:hover {
+    text-decoration: underline;
 }

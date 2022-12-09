@@ -41,6 +41,10 @@
     margin-top: 10pt
 }
 
+.item-edit:hover {
+    text-decoration: underline;
+}
+
 .item-price {
     font: 10pt "Helvetica Neue", Helvetica, arial;
 }

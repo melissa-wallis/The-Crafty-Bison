@@ -7,8 +7,6 @@ import { EmbroideryItems } from "../items/EmbroideryItems"
 import { MiniatureItems } from "../items/MiniatureItems"
 import { WallHangingItems } from "../items/WallHangingItems"
 
-
-
 export const EmployeeViews = () => {
     return (
         <Routes>

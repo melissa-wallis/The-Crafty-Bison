@@ -26,41 +26,42 @@ export const AllItems = () => {
 
     //edit button
 
-    //delete button 
-    const deleteButton = () => {
-        <button onClick={() => {}} className="item-delete">Delete</button>
-            }
+   // delete button 
 
-    
-    
-    
     return (
         <>
         <img className="hero" src="../../images/Banner.svg"></img>
         <div className="items-container">
         {items.map((itemObj) => {
-            return (
-            <div className="item-card" key={itemObj.id}>
+            return <div className="item-card" value={itemObj.id} key={itemObj.id}>
                 <img
                 src={itemObj.imageUrl}
                 alt={itemObj.name}
                 className="item-img"
-                onClick={() => {
-                    navigateToItemDetails(itemObj.id)
-                }}
+                onClick={() => {navigateToItemDetails(itemObj.id)}
+        }
                 />
-                <div className="item-name">{itemObj.name}</div>
-                <div className="item-description">{itemObj.description}</div>
-                <div className="item-price">{itemObj.price} Dollhairs</div>
-                <Link className="item-edit" to={`/items/${itemObj.id}/edit`}>Edit</Link>
-                <Link className="item-delete">Delete</Link>
+            <div className="item-name">{itemObj.name}</div>
+            <div className="item-description">{itemObj.description}</div>
+            <div className="item-price">{itemObj.price} Dollhairs</div>
+            <Link className="item-edit" to={`/items/${itemObj.id}/edit`}>Edit</Link>
+            <button onClick={(evt) => {
+                evt.preventDefault()
+                fetch (`http://localhost:8088/items/${itemObj.id}`, {
+                        method: "DELETE"
+                    })
+                        .then(response => response.json())
+                        .then (() => fetch (`http://localhost:8088/items`))
+                        .then(response => response.json())
+                        .then(response => 
+                            setItems(response))
+                    }}>Delete</button>
             </div>
-            )
         })}
         </div>
         </>
     )
-    }
+}
 
 
 

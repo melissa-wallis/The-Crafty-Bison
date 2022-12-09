@@ -117,7 +117,9 @@ export const EditItemForm = () => {
             </fieldset>
             <fieldset>
             <div className="form-group">
-                <select onChange={(evt) => {
+                <select 
+                value={item.itemTypeId}
+                onChange={(evt) => {
                     const copy = { ...item };
                     copy.itemTypeId = parseInt(evt.target.value);
                     update(copy);
