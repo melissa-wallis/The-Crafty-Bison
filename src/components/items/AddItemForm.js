@@ -51,7 +51,6 @@ export const AddItemForm = () => {
             required autoFocus
             type="text"
             className="form-control"
-            
             placeholder="Item name"
             onChange={(evt) => {
                 const copy = { ...item };

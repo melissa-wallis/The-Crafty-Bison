@@ -18,6 +18,7 @@ export const AllItems = () => {
         },
         []
         )
+    
 
     //navigates to item details view
     const navigateToItemDetails = (itemId) => {
@@ -26,8 +27,6 @@ export const AllItems = () => {
 
     //edit button
 
-   // delete button 
-
     return (
         <>
         <img className="hero" src="../../images/Banner.svg"></img>
@@ -35,16 +34,19 @@ export const AllItems = () => {
         {items.map((itemObj) => {
             return <div className="item-card" value={itemObj.id} key={itemObj.id}>
                 <img
-                src={itemObj.imageUrl}
+                src={itemObj.image}
                 alt={itemObj.name}
                 className="item-img"
-                onClick={() => {navigateToItemDetails(itemObj.id)}
-        }
+                onClick={() => {
+                    navigateToItemDetails(itemObj.id)
+                }}
                 />
             <div className="item-name">{itemObj.name}</div>
             <div className="item-description">{itemObj.description}</div>
             <div className="item-price">{itemObj.price} Dollhairs</div>
-            <Link className="item-edit" to={`/items/${itemObj.id}/edit`}>Edit</Link>
+            <Link className="item-edit" to={`/items/${itemObj.id}/edit`}>
+                <button>Edit</button>
+            </Link>
             <button onClick={(evt) => {
                 evt.preventDefault()
                 fetch (`http://localhost:8088/items/${itemObj.id}`, {
