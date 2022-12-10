@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import "./Items.css"
 
 export const AllItems = () => {
     const [items, setItems] = useState([])
@@ -47,7 +46,8 @@ export const AllItems = () => {
             <Link className="item-edit" to={`/items/${itemObj.id}/edit`}>
                 <button>Edit</button>
             </Link>
-            <button onClick={(evt) => {
+            <button className="item-delete" 
+            onClick={(evt) => {
                 evt.preventDefault()
                 fetch (`http://localhost:8088/items/${itemObj.id}`, {
                         method: "DELETE"

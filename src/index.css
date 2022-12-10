@@ -1,2 +1,33 @@
 /* Styling for entire project
 /* Import the google web fonts you want to use */
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext');
+
+
+button {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition-duration: 0.2s;
+}
+
+button:hover {
+    background-color: gray;
+    color: white;
+}
+
+input,
+select,
+
+
+textarea {
+    color: #404040;
+    font-family: "Comfortaa", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+body {
+    padding: 0 3rem;
+    background-color: #fbfaf9;
+}
