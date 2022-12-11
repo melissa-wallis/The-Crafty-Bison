@@ -14,7 +14,7 @@ export const EditItemForm = () => {
     const {itemId} = useParams()
     const navigate = useNavigate()
 
-    //pull item from API
+    //pull item from API, updates item state
     useEffect(() => {
         fetch(`http://localhost:8088/items/${itemId}`)
             .then(response => response.json())
@@ -33,10 +33,11 @@ export const EditItemForm = () => {
         });
     }, []);
 
-    //function that runs when the save button is clicked - needs PUT request to replace object being edited
+    //function that runs when the save button is clicked
     const handleSaveItem = (evt) => {
         evt.preventDefault()
 
+        //PUT request modifies the item object
         return fetch(`http://localhost:8088/items/${item.id}`, {
             method: "PUT",
             headers: {"Content-Type": "application/json"},

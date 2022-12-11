@@ -1,4 +1,4 @@
-//this modules controls the ???
+//this modules controls the routes and what depending on the type of user, what components the user sees
 
 import { Route, Routes } from "react-router-dom"
 import { Authorized } from "./views/Authorized"

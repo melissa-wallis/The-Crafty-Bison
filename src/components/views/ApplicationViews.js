@@ -1,3 +1,5 @@
+//controls what view the user sees depending on the .staff property on their user object
+
 import { CustomerViews } from "./CustomerViews"
 import { EmployeeViews } from "./EmployeeViews"
 

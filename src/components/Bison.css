@@ -78,7 +78,25 @@
 }
 /* End items */
 
+
 /* Buttons */
 .item-edit {
   text-decoration: none;
 }
+/* End Buttons */
+
+
+/* Forms */
+.item-form {
+}
+
+.item-form-title {
+  display: flex;
+  justify-content: center;
+  font-size: 24pt;
+}
+.form-group {
+}
+.form-control{}
+
+/* End Forms */

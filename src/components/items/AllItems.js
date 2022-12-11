@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 
+//Use Effect pulls items from local storage, parses it into json, and uses the setter function, setItems to update the state variable items so that items now contains the items data to display to the user
+
 export const AllItems = () => {
     const [items, setItems] = useState([])
     const navigate = useNavigate()
@@ -24,8 +26,6 @@ export const AllItems = () => {
         navigate(`/${itemId}`)
     }
 
-    //edit button
-
     return (
         <>
         <img className="hero" src="../../images/Banner.svg"></img>
@@ -41,8 +41,6 @@ export const AllItems = () => {
                 }}
                 />
             <div className="item-name">{itemObj.name}</div>
-            <div className="item-description">{itemObj.description}</div>
-            <div className="item-price">{itemObj.price} Dollhairs</div>
             <Link className="item-edit" to={`/items/${itemObj.id}/edit`}>
                 <button>Edit</button>
             </Link>
@@ -65,6 +63,7 @@ export const AllItems = () => {
     )
 }
 
+//delete pulls item from local storage using id property, deletes that item from the API then updates items state 
 
 
 

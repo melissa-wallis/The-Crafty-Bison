@@ -1,3 +1,5 @@
+//module for navbar
+
 import { Link, useNavigate } from 'react-router-dom'
 import BisonLogo2 from '../../assets/BisonLogo2.png'
 

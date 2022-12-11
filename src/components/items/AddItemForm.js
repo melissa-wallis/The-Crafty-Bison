@@ -24,9 +24,11 @@ export const AddItemForm = () => {
         });
     }, []);
 
-    //function that runs when List Item button is clicked, contains POST request
+    //function that runs when List Item button is clicked contains 
     const handleSaveItem = (evt) => {
     evt.preventDefault();
+
+    //POST request modifies the item state by adding a new item
     {fetch('http://localhost:8088/items', {
             method: "POST",
             headers: {"Content-Type": "application/json",
@@ -94,7 +96,7 @@ export const AddItemForm = () => {
         </fieldset>
         <fieldset>
         <div className="form-group">
-            <label htmlFor="imgUrl">Image URL: </label>
+            <label htmlFor="imgUrl">Image URL:</label>
             <input
             required
             id="imgUrl"
