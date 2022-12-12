@@ -1,9 +1,11 @@
 //for adding new items to the store
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Axios from 'axios'
 
 //set default properties for object
 export const AddItemForm = () => {
+
     const [item, update] = useState({
     name: "",
     description: "",
@@ -12,35 +14,62 @@ export const AddItemForm = () => {
     itemTypeId: 0
     });
 
-    const [itemTypes, setItemType] = useState([]);
     const navigate = useNavigate();
 
-  //pulls itemTypes from API to update itemTypes state//
+    //Initialize itemTypes list
+    const [itemTypes, setItemType] = useState([]);
+
+    //pulls itemTypes from API to update itemTypes state//
     useEffect(() => {
-    fetch(`http://localhost:8088/itemTypes`)
-        .then((res) => res.json())
-        .then((itemTypesData) => {
-        setItemType(itemTypesData);
+        fetch(`http://localhost:8088/itemTypes`)
+            .then((res) => res.json())
+            .then((itemTypesData) => {
+                setItemType(itemTypesData);
         });
     }, []);
 
-    //function that runs when List Item button is clicked contains 
+    //state that holds the image file selected
+    const [imageSelected, setImageSelected] = useState("")
+
+    //function that runs when List Item button is clicked
     const handleSaveItem = (evt) => {
     evt.preventDefault();
 
-    //POST request modifies the item state by adding a new item
-    {fetch('http://localhost:8088/items', {
-            method: "POST",
-            headers: {"Content-Type": "application/json",
-        },
-        body: JSON.stringify(item),
-        })
-        .then(response => response.json())
-        .then(() => {
-            navigate('/')
-        })
-        }
-    }
+    //Upload the image to Cloudinary platform
+    //Followed tutorial: https://www.youtube.com/watch?v=Y-VgaRwWS3o
+        const formData = new FormData();
+        //Constructing the form data - add the imported file and upload preset
+        formData.append("file", imageSelected);
+        formData.append("upload_preset", "Crafty-Bison1");
+        //Use Axios API to post photo to Cloudinary platform
+        Axios.post(
+            "https://api.cloudinary.com/v1_1/dkst6uh8j/image/upload", formData)
+            .then(response => {
+                const itemToSaveToAPI = {
+                    name: item.name,
+                    description: item.description,
+                    price: item.price,
+                    image: response.data.url,
+                    itemTypeId: item.itemTypeId
+                }
+
+                    //POST request modifies the item state by adding a new item
+                    return fetch('http://localhost:8088/items', {
+                            method: "POST",
+                            headers: {"Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(itemToSaveToAPI),
+                        })
+                        .then(response => response.json())
+                        .then(() => {
+                            navigate('/')
+                        })
+                        }
+                    
+                )
+                    };
+
+
 
     return (
     <form className="item-form">
@@ -95,7 +124,18 @@ export const AddItemForm = () => {
         </div>
         </fieldset>
         <fieldset>
-        <div className="form-group">
+            <div>
+                <input 
+                type="file" 
+                onChange={(evt) => {
+                    setImageSelected(evt.target.files[0])
+                }}
+            />
+            </div>
+
+
+
+        {/* <div className="form-group">
             <label htmlFor="imgUrl">Image URL:</label>
             <input
             required
@@ -109,7 +149,7 @@ export const AddItemForm = () => {
                 update(copy);
             }}
             />
-        </div>
+        </div> */}
         </fieldset>
         <fieldset>
         <div className="form-group">
@@ -133,4 +173,4 @@ export const AddItemForm = () => {
         >List Item</button>
     </form>
     );
-};
+}
