@@ -30,11 +30,12 @@ export const Login = () => {
     }
 
     return (
+        <>
+        <img className="hero" src="../../images/Banner.svg"></img>
         <main className="container--login">
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>The Crafty Bison</h1>
-                    <h2>Please sign in</h2>
+                    <h1>Please sign in</h1>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>
                         <input type="email"
@@ -55,6 +56,7 @@ export const Login = () => {
                 <Link to="/register">Not a member yet?</Link>
             </section>
         </main>
+        </>
     )
 }
 

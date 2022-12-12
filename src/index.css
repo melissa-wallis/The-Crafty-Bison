@@ -9,11 +9,11 @@ button {
     padding: 5px 10px;
     border-radius: 8px;
     transition-duration: 0.2s;
-    border: 1px solid gray
+    border: 1px solid 
 }
 
 button:hover {
-    background-color: gray;
+    background-color: #c88b85;
     color: white;
 }
 
@@ -26,6 +26,8 @@ line-height: 1.5;
 }
 
 body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Josefin Slab', serif;
     padding: 0 3rem;
     background-color: #fbfaf9;
 }

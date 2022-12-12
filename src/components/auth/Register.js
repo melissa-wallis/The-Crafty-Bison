@@ -54,9 +54,11 @@ export const Register = (props) => {
     }
 
     return (
+        <>
+        <img className="hero" src="../../images/Banner.svg"></img>
         <main style={{ textAlign: "center" }}>
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Please Register for The Crafty Bison</h1>
+                <h1 className="h3 mb-3 font-weight-normal">Please Register</h1>
                 <fieldset>
                     <label htmlFor="fullName"> Full Name </label>
                     <input onChange={updateCustomer}
@@ -83,6 +85,7 @@ export const Register = (props) => {
                 </fieldset>
             </form>
         </main>
+        </>
     )
 }
 
