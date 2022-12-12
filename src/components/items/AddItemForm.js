@@ -69,8 +69,6 @@ export const AddItemForm = () => {
                 )
                     };
 
-
-
     return (
     <form className="item-form">
         <h2 className="item-form-title">Add Item to Store</h2>
@@ -91,6 +89,7 @@ export const AddItemForm = () => {
             />
         </div>
         </fieldset>
+
         <fieldset>
         <div className="form-group">
             <label htmlFor="description">Description:</label>
@@ -107,6 +106,7 @@ export const AddItemForm = () => {
             />
         </div>
         </fieldset>
+
         <fieldset>
         <div className="form-group">
             <label htmlFor="price">Price:</label>
@@ -123,6 +123,7 @@ export const AddItemForm = () => {
             />
         </div>
         </fieldset>
+
         <fieldset>
             <div>
                 <input 
@@ -132,25 +133,8 @@ export const AddItemForm = () => {
                 }}
             />
             </div>
-
-
-
-        {/* <div className="form-group">
-            <label htmlFor="imgUrl">Image URL:</label>
-            <input
-            required
-            id="imgUrl"
-            type="text"
-            className="form-control"
-            placeholder="example.com"
-            onChange={(evt) => {
-                const copy = { ...item };
-                copy.image = evt.target.value;
-                update(copy);
-            }}
-            />
-        </div> */}
         </fieldset>
+
         <fieldset>
         <div className="form-group">
             <select onChange={(evt) => {

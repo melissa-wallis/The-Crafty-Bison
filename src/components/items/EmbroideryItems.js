@@ -4,6 +4,11 @@ import { Link } from "react-router-dom"
 export const EmbroideryItems = () => {
     const [items, setItems] = useState([])
 
+
+    const localBisonUser = localStorage.getItem("bison_user")
+    const bisonUserObject = JSON.parse(localBisonUser)
+
+    
     useEffect(() => {
         fetch(`http://localhost:8088/items?itemTypeId=2`)
         .then((res) => res.json())
@@ -25,11 +30,15 @@ export const EmbroideryItems = () => {
                 <div className="item-name">{itemObj.name}</div>
                 <div className="item-description">{itemObj.description}</div>
                 <div className="item-price">{itemObj.price} Dollhairs</div>
-                <Link className="item-edit" to={`/items/${itemObj.id}/edit`}>
+                
+                {
+                bisonUserObject.staff
+                ? <>
+            <Link className="item-edit" to={`/items/${itemObj.id}/edit`}>
                 <button>Edit</button>
-                </Link>
-                <button className="item-delete" 
-                onClick={(evt) => {
+            </Link>
+            <button className="item-delete" 
+            onClick={(evt) => {
                 evt.preventDefault()
                 fetch (`http://localhost:8088/items/${itemObj.id}`, {
                         method: "DELETE"
@@ -40,6 +49,10 @@ export const EmbroideryItems = () => {
                         .then(response => 
                             setItems(response))
                     }}>Delete</button>
+                </>
+                : ""
+            }
+
             </div>
             )
         })}

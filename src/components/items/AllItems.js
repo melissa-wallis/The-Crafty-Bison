@@ -9,6 +9,9 @@ export const AllItems = () => {
     const [items, setItems] = useState([])
     const navigate = useNavigate()
     
+    const localBisonUser = localStorage.getItem("bison_user")
+    const bisonUserObject = JSON.parse(localBisonUser)
+
     useEffect(
         () => {
             fetch (`http://localhost:8088/items`)
@@ -43,6 +46,10 @@ export const AllItems = () => {
             <div className="item-name">{itemObj.name}</div>
             <div className="item-description">{itemObj.description}</div>
             <div className="item-price">{itemObj.price} Dollhairs</div>
+
+            {
+                bisonUserObject.staff
+                ? <>
             <Link className="item-edit" to={`/items/${itemObj.id}/edit`}>
                 <button>Edit</button>
             </Link>
@@ -58,6 +65,11 @@ export const AllItems = () => {
                         .then(response => 
                             setItems(response))
                     }}>Delete</button>
+                </>
+                : ""
+            }
+
+
             </div>
         })}
         </div>

@@ -1,46 +1,18 @@
 //module for navbar
-
+import {EmployeeNav} from "./EmployeeNav" 
+import {CustomerNav} from "./CustomerNav"
 import { Link, useNavigate } from 'react-router-dom'
 import BisonLogo2 from '../../assets/BisonLogo2.png'
 
 export const NavBar = () => {
-    const navigate = useNavigate()
 
-    return (
-    <ul className="navbar">
-        <Link className="navbar-link" to="/">
-        <img className="logo-img" src={BisonLogo2} alt="Crafty Bison Logo" />
-        </Link>
+    const localBisonUser = localStorage.getItem("bison_user")
+    const bisonUserObject = JSON.parse(localBisonUser)
 
-        <li className="navbar-item">
-        <Link className="navbar-link" to="/crossStitch">Cross Stitch</Link>
-        </li>
+    if (bisonUserObject.staff) {
+        return <EmployeeNav/>
+    } else {
+        return <CustomerNav />
+    }
 
-        <li className="navbar-item">
-        <Link className="navbar-link" to="/embroidery">Embroidery</Link>
-        </li>
-
-        <li className="navbar-item">
-        <Link className="navbar-link" to="/miniatures">Miniatures</Link>
-        </li>
-
-        <li className="navbar-item">
-        <Link className="navbar-link" to="/wallHangings">Wall Hangings</Link>
-        </li>
-        
-        <li className="navbar-item">
-        <Link className="navbar-link" to="/item/create">Add New Item</Link>
-        </li>
-            {
-            localStorage.getItem("bison_user")
-                ? <li className="navbar-item">
-                    <Link className="navbar-link" to="" onClick={() => {
-                        localStorage.removeItem("bison_user")
-                        navigate("/", {replace: true})
-                    }}>Logout</Link> 
-                </li>
-                : ""
-            }
-    </ul>
-)
-}
+    }
