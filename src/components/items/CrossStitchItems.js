@@ -24,6 +24,8 @@ export const CrossStitchItems = () => {
                 />
                 <div className="item-name">{itemObj.name}</div>
                 <Link className="item-edit" to={`/items/${itemObj.id}/edit`}>
+                <div className="item-description">{itemObj.description}</div>
+                <div className="item-price">{itemObj.price} Dollhairs</div>
                 <button>Edit</button>
                 </Link>
                 <button className="item-delete" 

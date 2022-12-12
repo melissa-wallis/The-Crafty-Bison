@@ -23,6 +23,8 @@ export const EmbroideryItems = () => {
                 className="item-img"
                 />
                 <div className="item-name">{itemObj.name}</div>
+                <div className="item-description">{itemObj.description}</div>
+                <div className="item-price">{itemObj.price} Dollhairs</div>
                 <Link className="item-edit" to={`/items/${itemObj.id}/edit`}>
                 <button>Edit</button>
                 </Link>
