@@ -35,14 +35,16 @@ export const AllItems = () => {
         <div className="items-container">
         {items.map((itemObj) => {
             return <div className="item-card" value={itemObj.id} key={itemObj.id}>
+                <div className="img-div">
                 <img
                 src={itemObj.image}
                 alt={itemObj.name}
                 className="item-img"
-                onClick={() => {
-                    navigateToItemDetails(itemObj.id)
-                }}
-                />
+                // onClick={() => {
+                //     navigateToItemDetails(itemObj.id)
+                // }}
+                /> 
+                </div>
             <div className="item-name">{itemObj.name}</div>
             <div className="item-description">{itemObj.description}</div>
             <div className="item-price">{itemObj.price} Dollhairs</div>

@@ -1,3 +1,5 @@
+//customer nav is the same as employeeNav just without the Add New Item link
+
 import { Link, useNavigate } from 'react-router-dom'
 import BisonLogo2 from '../../assets/BisonLogo2.png'
 
