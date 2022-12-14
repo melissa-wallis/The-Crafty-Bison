@@ -1,8 +1,6 @@
-//module for navbar
+//module for navbar views
 import {EmployeeNav} from "./EmployeeNav" 
 import {CustomerNav} from "./CustomerNav"
-import { Link, useNavigate } from 'react-router-dom'
-import BisonLogo2 from '../../assets/BisonLogo2.png'
 
 export const NavBar = () => {
 
