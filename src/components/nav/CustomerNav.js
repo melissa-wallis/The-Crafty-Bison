@@ -1,7 +1,7 @@
 //customer nav is the same as employeeNav just without the Add New Item link
 
 import { Link, useNavigate } from 'react-router-dom'
-import BisonLogo4 from '../../assets/BisonLogo4.png'
+// import BisonLogo4 from '../../assets/BisonLogo4.png'
 
 export const CustomerNav = () => {
 
@@ -9,8 +9,8 @@ export const CustomerNav = () => {
     
     return (
     <ul className="navbar">
-        <Link className="navbar-link" to="/">
-        <img className="logo-img" src={BisonLogo4} alt="Crafty Bison Logo" />
+        <Link className="navbar-item" to="/">
+        <img className="logo-img" src="../../images/BisonLogo4.png" alt="Crafty Bison Logo" />
         </Link>
 
         <li className="navbar-item">

@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom'
-import BisonLogo4 from '../../assets/BisonLogo4.png'
+// import BisonLogo4 from '../../assets/BisonLogo4.png'
 
 export const EmployeeNav = () => {
 
@@ -8,7 +8,7 @@ export const EmployeeNav = () => {
     return (
     <ul className="navbar">
         <Link className="navbar-item" to="/">
-        <img className="logo-img" src={BisonLogo4} alt="Crafty Bison Logo" />
+        <img className="logo-img" src="../../images/BisonLogo4.png" alt="Crafty Bison Logo" />
         </Link>
 
         <li className="navbar-item">

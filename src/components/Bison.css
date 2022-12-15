@@ -23,24 +23,29 @@
   font-family: 'Josefin Slab', serif;
 }
 
+.navbar-item:hover {
+  transform: scale(110%);
+  transition: 250ms ease-in-out;
+  color: #c88b85;
+}
+
+
 .navbar-link {
   text-decoration: none;
   color: black;
   font: 10pt 
 }
 
-.navbar-link:hover {
-  text-decoration: underline;
-}
-
 .logo {
   text-decoration: none;
 }
+
 
 .logo-img {
   width: 75px;
   height: 75px;
 }
+
 /* End Navbar */
 
 
@@ -59,6 +64,7 @@
   border-radius: 1rem;
   box-shadow: 4px 3px 4px gray;
   margin: 1em;
+  background-color: #FFFFFF;
 }
 
 
