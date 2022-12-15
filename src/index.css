@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400&family=Josefin+Slab&display=swap');
 
 h1 {
+    font-family: 'Josefin Slab', serif;
     font-size: 30pt;
 }
 
