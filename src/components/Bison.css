@@ -11,7 +11,7 @@
   border-radius: 1rem;
   padding: .5rem;
   font-size: 14pt;
-  
+
 }
 
 .navbar-item {
@@ -33,7 +33,7 @@
 .navbar-link {
   text-decoration: none;
   color: black;
-  font: 10pt 
+  font: 10pt
 }
 
 .logo {
@@ -49,7 +49,8 @@
 /* End Navbar */
 
 
-/*items*/
+/*items styling*/
+
 .items-container {
   display: flex;
   flex-wrap: wrap;
@@ -67,7 +68,6 @@
   background-color: #FFFFFF;
 }
 
-
 .img-div {
   border-radius: 1rem;
 }
@@ -76,13 +76,12 @@
   height: 320px;
   width: 320px;
   object-fit: scale-down;
-  /* cursor: pointer; */
-  /* border-radius: 1rem; */
+  cursor: pointer;
+  border-radius: 1rem;
 }
 
 .item-name {
   padding: 10pt;
-  font-size: 14pt;
   font-family: 'Josefin Slab', serif;
   font-size: 16pt;
 
@@ -99,7 +98,67 @@
   font-size: 12pt;
   padding: 5px;
 }
-/* End items */
+
+
+.item-details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-details-img {
+  height: 600px;
+  width: 600px;
+  padding: 5px;
+  object-fit: scale-down;
+}
+
+.item-details-column {
+  background-color: #e6beb6;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 50%;
+  /* box-shadow: 4px 3px 4px #e6beb6; */
+}
+
+.item-details-name {
+  padding: 10pt;
+  font-family: 'Josefin Slab', serif;
+  font-size: 24pt;
+}
+
+.item-details-description {
+  padding: 10pt;
+  font-family: 'Josefin Slab', serif;
+  font-size: 14pt;
+}
+
+.item-details-price {
+  padding: 10pt;
+  font-family: 'Josefin Slab', serif;
+  font-size: 14pt;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Forms */

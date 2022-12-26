@@ -20,10 +20,12 @@ export const ItemDetails=() => {
 
     return (
         <div className="item-details-container">
-        <h3 className="item-details-name">Details for {item.name}</h3>
         <img src={item.image} alt={item.name} className="item-details-img" />
-        <div className="item-description">{item.description}</div>
-        <div className="item-price">{item.price} Dollhairs</div>
+        <div className="item-details-column">
+        <div className="item-details-name">{item.name}</div>
+        <div className="item-details-description">{item.description}</div>
+        <div className="item-details-price">{item.price} Dollhairs</div>
+        </div>
         </div>      
     )
     }
