@@ -8,6 +8,7 @@ import { EditItemForm } from "../items/EditItemForm"
 import { EmbroideryItems } from "../items/EmbroideryItems"
 import { MiniatureItems } from "../items/MiniatureItems"
 import { WallHangingItems } from "../items/WallHangingItems"
+import { ItemDetails } from "../items/ItemDetails"
 
 export const EmployeeViews = () => {
     return (
@@ -18,6 +19,7 @@ export const EmployeeViews = () => {
                 </>
             }>
                 <Route path="/" element={ <AllItems /> } />
+                <Route path=":itemId" element={<ItemDetails />} />
                 <Route path="crossStitch" element={<CrossStitchItems/>} />
                 <Route path="embroidery" element={<EmbroideryItems/>} />
                 <Route path="miniatures" element={<MiniatureItems/>} />

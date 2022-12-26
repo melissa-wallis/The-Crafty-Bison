@@ -8,6 +8,7 @@ import { CrossStitchItems } from "../items/CrossStitchItems"
 import { EmbroideryItems } from "../items/EmbroideryItems"
 import { MiniatureItems } from "../items/MiniatureItems"
 import { WallHangingItems } from "../items/WallHangingItems"
+import { ItemDetails } from "../items/ItemDetails"
 
 export const CustomerViews = () => {
     return (
@@ -22,6 +23,7 @@ export const CustomerViews = () => {
                 <Route path="embroidery" element={<EmbroideryItems/>} />
                 <Route path="miniatures" element={<MiniatureItems/>} />
                 <Route path="wallHangings" element={<WallHangingItems/>} />
+                <Route path=":itemId" element={<ItemDetails />} />
             </Route>
         </Routes>
     )

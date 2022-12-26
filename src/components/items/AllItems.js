@@ -19,8 +19,7 @@ export const AllItems = () => {
             .then((itemsArray) => {
                 setItems(itemsArray)
             })
-        },
-        []
+        }, []
         )
     
 
@@ -31,7 +30,7 @@ export const AllItems = () => {
 
     return (
         <>
-        <img className="hero" src="../../images/Banner.svg"></img>
+        <img className="hero" src="../../images/Banner.svg" alt=''></img>
         <div className="items-container">
         {items.map((itemObj) => {
             return <div className="item-card" value={itemObj.id} key={itemObj.id}>
@@ -40,9 +39,9 @@ export const AllItems = () => {
                 src={itemObj.image}
                 alt={itemObj.name}
                 className="item-img"
-                // onClick={() => {
-                //     navigateToItemDetails(itemObj.id)
-                // }}
+                onClick={() => {
+                    navigateToItemDetails(itemObj.id)
+                }}
                 /> 
                 </div>
             <div className="item-name">{itemObj.name}</div>
