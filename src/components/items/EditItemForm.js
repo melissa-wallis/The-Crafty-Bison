@@ -52,7 +52,6 @@ export const EditItemForm = () => {
             <h2 className="item-form-title">Edit Item</h2>
     
             <fieldset>
-            <div className="form-group">
                 <label htmlFor="name">Name:</label>
                 <input
                 required autoFocus
@@ -65,10 +64,8 @@ export const EditItemForm = () => {
                     update(copy);
                 }}
                 />
-            </div>
             </fieldset>
             <fieldset>
-            <div className="form-group">
                 <label htmlFor="description">Description:</label>
                 <input
                 required autoFocus
@@ -81,10 +78,8 @@ export const EditItemForm = () => {
                     update(copy);
                 }}
                 />
-            </div>
             </fieldset>
             <fieldset>
-            <div className="form-group">
                 <label htmlFor="price">Price:</label>
                 <input
                 required autoFocus
@@ -97,27 +92,8 @@ export const EditItemForm = () => {
                     update(copy);
                 }}
                 />
-            </div>
             </fieldset>
-            {/* <fieldset>
-            <div className="form-group">
-                <label htmlFor="imgUrl">Image URL: </label>
-                <input
-                required
-                id="imgUrl"
-                type="text"
-                className="form-control"
-                value={item.image}
-                onChange={(evt) => {
-                    const copy = { ...item };
-                    copy.image = evt.target.value;
-                    update(copy);
-                }}
-                />
-            </div>
-            </fieldset> */}
             <fieldset>
-            <div className="form-group">
                 <select 
                 value={item.itemTypeId}
                 onChange={(evt) => {
@@ -131,7 +107,6 @@ export const EditItemForm = () => {
                     )
                     }
                 </select>
-            </div>
             </fieldset>
             <button className="btn"
             onClick={(evt) => {

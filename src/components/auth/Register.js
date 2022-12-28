@@ -56,9 +56,8 @@ export const Register = (props) => {
     return (
         <>
         <img className="hero" src="../../images/Banner.svg"></img>
-        <main style={{ textAlign: "center" }}>
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Please Register</h1>
+                <h1>Please Register</h1>
                 <fieldset>
                     <label htmlFor="fullName"> Full Name </label>
                     <input onChange={updateCustomer}
@@ -66,7 +65,7 @@ export const Register = (props) => {
                         placeholder="Enter your name" required autoFocus />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="email"> Email address </label>
+                    <label> Email address </label>
                     <input onChange={updateCustomer}
                         type="email" id="email" className="form-control"
                         placeholder="Email address" required />
@@ -80,11 +79,8 @@ export const Register = (props) => {
                         type="checkbox" id="isStaff" />
                     <label htmlFor="email"> I am an employee </label>
                 </fieldset>
-                <fieldset>
-                    <button type="submit"> Register </button>
-                </fieldset>
+                <button type="submit"> Register </button>
             </form>
-        </main>
         </>
     )
 }

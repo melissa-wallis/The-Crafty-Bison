@@ -32,8 +32,6 @@ export const Login = () => {
     return (
         <>
         <img className="hero" src="../../images/Banner.svg"></img>
-        <main className="container--login">
-            <section>
                 <form className="form--login" onSubmit={handleLogin}>
                     <h1>Please sign in</h1>
                     <fieldset>
@@ -41,21 +39,17 @@ export const Login = () => {
                         <input type="email"
                             value={email}
                             onChange={evt => set(evt.target.value)}
-                            className="form-control"
+                            // className="form-control"
                             placeholder="Email address"
                             required autoFocus />
                     </fieldset>
-                    <fieldset>
+                <fieldset>
+                <Link className="membership" to="/register">Not a member yet?</Link>
+                </fieldset>
                         <button type="submit">
                             Sign in
                         </button>
-                    </fieldset>
                 </form>
-            </section>
-            <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
-            </section>
-        </main>
         </>
     )
 }

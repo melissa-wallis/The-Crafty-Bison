@@ -68,10 +68,6 @@
   background-color: #FFFFFF;
 }
 
-.img-div {
-  border-radius: 1rem;
-}
-
 .item-img {
   height: 320px;
   width: 320px;
@@ -140,28 +136,4 @@
   padding: 10pt;
   font-family: 'Josefin Slab', serif;
   font-size: 14pt;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Forms */
-
-.item-form {
-  border: none;
 }

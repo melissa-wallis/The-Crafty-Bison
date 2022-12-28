@@ -35,10 +35,7 @@ export const MiniatureItems = () => {
                     navigateToItemDetails(itemObj.id)
                 }}
                 />
-                <div className="item-name">{itemObj.name}</div>
-                <div className="item-description">{itemObj.description}</div>
-                <div className="item-price">{itemObj.price} Dollhairs</div>
-                
+                <div className="item-name">{itemObj.name}</div>                
                 {
                 bisonUserObject.staff
                 ? <>
