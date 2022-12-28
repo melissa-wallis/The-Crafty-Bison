@@ -99,7 +99,7 @@ export const EditItemForm = () => {
                 />
             </div>
             </fieldset>
-            <fieldset>
+            {/* <fieldset>
             <div className="form-group">
                 <label htmlFor="imgUrl">Image URL: </label>
                 <input
@@ -115,7 +115,7 @@ export const EditItemForm = () => {
                 }}
                 />
             </div>
-            </fieldset>
+            </fieldset> */}
             <fieldset>
             <div className="form-group">
                 <select 

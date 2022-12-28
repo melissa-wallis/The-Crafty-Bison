@@ -84,7 +84,6 @@
   padding: 10pt;
   font-family: 'Josefin Slab', serif;
   font-size: 16pt;
-
 }
 
 .item-description {
@@ -163,9 +162,6 @@
 
 /* Forms */
 
-.item-form-title {
-  font-family: 'Josefin Slab', serif;
-  display: flex;
-  justify-content: center;
-  font-size: 24pt;
+.item-form {
+  border: none;
 }

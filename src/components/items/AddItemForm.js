@@ -5,7 +5,6 @@ import Axios from 'axios'
 
 //set default properties for object
 export const AddItemForm = () => {
-
     const [item, update] = useState({
     name: "",
     description: "",
@@ -71,8 +70,7 @@ export const AddItemForm = () => {
 
     return (
     <form className="item-form">
-        <h2 className="item-form-title">Add Item to Store</h2>
-
+        <h2>Add Item to Store</h2>
         <fieldset>
         <div className="form-group">
             <label htmlFor="name">Name:</label>

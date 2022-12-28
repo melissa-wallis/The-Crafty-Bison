@@ -6,14 +6,23 @@
 h1 {
     font-family: 'Josefin Slab', serif;
     font-size: 30pt;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Josefin Slab', serif;
+    font-size: 24pt;
+    text-align: center;
 }
 
 fieldset {
-    min-width: 0;
+    min-width: 0; 
     padding: 1rem 0;
     margin: 0;
     border: 0;
-}
+    background-color: #c88b85;
+} 
+
 
 button {
     margin-top: 5px;
@@ -35,13 +44,14 @@ button:hover {
 
 input {
     font-family: 'Josefin Sans', sans-serif;
-    font-weight: 300;
     font-size: 12pt;
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
 }
 
 label {
     font-size: 16px;
-    line-height: 1.5;
     font-family: 'Josefin Slab', serif;
 }
 
@@ -51,14 +61,6 @@ select {
     line-height: 1.5;
 }
 
-textarea {
-font-size: 14px;
-line-height: 1.5;
-}
-
 body {
-    /* font-family: 'Josefin Sans', sans-serif;
-    font-family: 'Josefin Slab', serif; */
-    /* padding: 0 3rem; */
     background-color: #fbfaf9;
 }
