@@ -49,14 +49,14 @@ export const EditItemForm = () => {
 
     return (
         <form className="item-form">
-            <h2 className="item-form-title">Edit Item</h2>
-    
+            <h1>Edit Item</h1>
             <fieldset>
                 <input
                 required autoFocus
                 type="text"
                 className="form-control"
                 value={item.name}
+                placeholder="Name"
                 onChange={(evt) => {
                     const copy = { ...item };
                     copy.name = evt.target.value;
@@ -65,11 +65,12 @@ export const EditItemForm = () => {
                 />
             </fieldset>
             <fieldset>
-                <input
+                <textarea
                 required autoFocus
                 type="text"
                 className="form-control"
                 value={item.description}
+                placeholder="Description"
                 onChange={(evt) => {
                     const copy = { ...item };
                     copy.description = evt.target.value;
@@ -83,6 +84,7 @@ export const EditItemForm = () => {
                 type="text"
                 className="form-control"
                 value={item.price}
+                placeholder="Price"
                 onChange={(evt) => {
                     const copy = { ...item };
                     copy.price = evt.target.value;

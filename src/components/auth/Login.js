@@ -37,8 +37,8 @@ export const Login = () => {
                     <fieldset>
                         <input type="email"
                             value={email}
+                            size="25"
                             onChange={evt => set(evt.target.value)}
-                            className="form-control"
                             placeholder="Email address"
                             required autoFocus />
                     </fieldset>

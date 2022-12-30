@@ -68,9 +68,8 @@ export const AddItemForm = () => {
 
   return (
     <form className="item-form">
-      <h2>Add Item to Store</h2>
+      <h1>Add Item to Store</h1>
       <fieldset>
-        {/* <label htmlFor="name">Name:</label> */}
         <input
           required
           autoFocus
@@ -86,8 +85,7 @@ export const AddItemForm = () => {
       </fieldset>
 
       <fieldset>
-        {/* <label htmlFor="description">Description:</label> */}
-        <input
+        <textarea
           required
           autoFocus
           type="text"
@@ -102,7 +100,6 @@ export const AddItemForm = () => {
       </fieldset>
 
       <fieldset>
-        {/* <label htmlFor="price">Price:</label> */}
         <input
           required
           autoFocus
@@ -117,14 +114,6 @@ export const AddItemForm = () => {
         />
       </fieldset>
 
-      <fieldset>
-        <input className="chooseFile"
-          type="file"
-          onChange={(evt) => {
-            setImageSelected(evt.target.files[0]);
-          }}
-        />
-      </fieldset>
 
       <fieldset>
         <select
@@ -141,6 +130,15 @@ export const AddItemForm = () => {
             </option>
           ))}
         </select>
+      </fieldset>
+
+      <fieldset>
+        <input className="chooseFile"
+          type="file"
+          onChange={(evt) => {
+            setImageSelected(evt.target.files[0]);
+          }}
+        />
       </fieldset>
 
       <button

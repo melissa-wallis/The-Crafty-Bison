@@ -60,12 +60,12 @@ export const Register = (props) => {
                 <h1>Please Register</h1>
                 <fieldset>
                     <input onChange={updateCustomer}
-                        type="text" id="fullName" className="form-control"
+                        type="text" size="25"
                         placeholder="Name" required autoFocus />
                 </fieldset>
                 <fieldset>
                     <input onChange={updateCustomer}
-                        type="email" id="email" className="form-control"
+                        type="email" size="25"
                         placeholder="Email address" required />
                 </fieldset>
                 <fieldset>

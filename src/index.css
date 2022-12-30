@@ -26,12 +26,12 @@ fieldset {
 button {
     margin: 5px;
     padding: 7px 10px;
-    border-radius: 8px;
+    border-radius: 1rem;
     transition-duration: 0.2s;
     border: 1px solid;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 300;
-    font-size: 10pt;
+    font-size: 12pt;
     background-color: #e6beb6;
 }
 
@@ -40,15 +40,49 @@ button:hover {
     color: white;
 }
 
-input {
+input[type=email] {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 12pt;
     padding: 10px;
     margin: 10px;
-    border-radius: 12px;
+    border-radius: 1rem;
     border: 0;
     box-shadow: 0px 0px 22px -1px #e6beb6;
-    width: 100%;
+    width:100%;
+}
+
+input[type=text] {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12pt;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 1rem;
+    border: 0;
+    box-shadow: 0px 0px 22px -1px #e6beb6;
+    width:100%;
+}
+
+input[type=file] {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12pt;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 1rem;
+    border: 0;
+    box-shadow: 0px 0px 22px -1px #e6beb6;
+    width:100%;
+}
+
+textarea {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12pt;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 1rem;
+    border: 0;
+    box-shadow: 0px 0px 22px -1px #e6beb6;
+    width:100%;
+    resize: vertical;
 }
 
 label {
@@ -57,8 +91,14 @@ label {
 }
 
 select {
-    font-family: 'Josefin Slab', serif;
-    font-size: 16px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12pt;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 1rem;
+    border: 0;
+    box-shadow: 0px 0px 22px -1px #e6beb6;
+    width:100%;
 }
 
 body {
