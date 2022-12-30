@@ -1,7 +1,20 @@
-/* .membership {
+.form--login {
     display: flex;
-    text-align: center;
-} */
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
 
+.membership {
+    display:flex;
+    justify-content: center;
+    font-family: 'Josefin Slab', serif;
+    font-size: 12pt;
+    text-decoration: none;
+}
 
-
+.membership:hover {
+    transform: scale(110%);
+    transition: 250ms ease-in-out;
+}

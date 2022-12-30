@@ -52,7 +52,6 @@ export const EditItemForm = () => {
             <h2 className="item-form-title">Edit Item</h2>
     
             <fieldset>
-                <label htmlFor="name">Name:</label>
                 <input
                 required autoFocus
                 type="text"
@@ -66,7 +65,6 @@ export const EditItemForm = () => {
                 />
             </fieldset>
             <fieldset>
-                <label htmlFor="description">Description:</label>
                 <input
                 required autoFocus
                 type="text"
@@ -80,7 +78,6 @@ export const EditItemForm = () => {
                 />
             </fieldset>
             <fieldset>
-                <label htmlFor="price">Price:</label>
                 <input
                 required autoFocus
                 type="text"
@@ -108,7 +105,7 @@ export const EditItemForm = () => {
                     }
                 </select>
             </fieldset>
-            <button className="btn"
+            <button
             onClick={(evt) => {
                 handleSaveItem(evt)
             }}

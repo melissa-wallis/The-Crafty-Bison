@@ -26,7 +26,6 @@
 .navbar-item:hover {
   transform: scale(110%);
   transition: 250ms ease-in-out;
-  color: #c88b85;
 }
 
 
@@ -50,7 +49,6 @@
 
 
 /*items styling*/
-
 .items-container {
   display: flex;
   flex-wrap: wrap;
@@ -73,7 +71,6 @@
   width: 320px;
   object-fit: scale-down;
   cursor: pointer;
-  border-radius: 1rem;
 }
 
 .item-name {
@@ -82,7 +79,7 @@
   font-size: 16pt;
 }
 
-.item-description {
+/* .item-description {
   font-family: 'Josefin Slab', serif;
   font-size: 12pt;
   padding: 5px;
@@ -92,7 +89,7 @@
   font-family: 'Josefin Slab', serif;
   font-size: 12pt;
   padding: 5px;
-}
+} */
 
 
 .item-details-container {
@@ -136,4 +133,17 @@
   padding: 10pt;
   font-family: 'Josefin Slab', serif;
   font-size: 14pt;
+}
+
+.item-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 35%;
+}
+
+.chooseFile {
+  border: 0;
 }

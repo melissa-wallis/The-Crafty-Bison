@@ -35,11 +35,10 @@ export const Login = () => {
                 <form className="form--login" onSubmit={handleLogin}>
                     <h1>Please sign in</h1>
                     <fieldset>
-                        <label htmlFor="inputEmail"> Email address </label>
                         <input type="email"
                             value={email}
                             onChange={evt => set(evt.target.value)}
-                            // className="form-control"
+                            className="form-control"
                             placeholder="Email address"
                             required autoFocus />
                     </fieldset>

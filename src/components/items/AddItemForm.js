@@ -70,13 +70,13 @@ export const AddItemForm = () => {
     <form className="item-form">
       <h2>Add Item to Store</h2>
       <fieldset>
-        <label htmlFor="name">Name:</label>
+        {/* <label htmlFor="name">Name:</label> */}
         <input
           required
           autoFocus
           type="text"
-          // className="form-control"
-          placeholder="Item name"
+          className="form-control"
+          placeholder="Name"
           onChange={(evt) => {
             const copy = { ...item };
             copy.name = evt.target.value;
@@ -86,13 +86,13 @@ export const AddItemForm = () => {
       </fieldset>
 
       <fieldset>
-        <label htmlFor="description">Description:</label>
+        {/* <label htmlFor="description">Description:</label> */}
         <input
           required
           autoFocus
           type="text"
-          // className="form-control"
-          placeholder="Item description"
+          className="form-control"
+          placeholder="Description"
           onChange={(evt) => {
             const copy = { ...item };
             copy.description = evt.target.value;
@@ -102,13 +102,13 @@ export const AddItemForm = () => {
       </fieldset>
 
       <fieldset>
-        <label htmlFor="price">Price:</label>
+        {/* <label htmlFor="price">Price:</label> */}
         <input
           required
           autoFocus
           type="text"
-          // className="form-control"
-          placeholder="Item price"
+          className="form-control"
+          placeholder="Price"
           onChange={(evt) => {
             const copy = { ...item };
             copy.price = evt.target.value;
@@ -118,7 +118,7 @@ export const AddItemForm = () => {
       </fieldset>
 
       <fieldset>
-        <input
+        <input className="chooseFile"
           type="file"
           onChange={(evt) => {
             setImageSelected(evt.target.files[0]);
