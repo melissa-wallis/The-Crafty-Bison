@@ -68,6 +68,20 @@ export const Register = (props) => {
                         type="email" size="25"
                         placeholder="Email address" required />
                 </fieldset>
+
+            {/* attempting to create custom checkbox
+                    <label class="checkbox-container"> I am an employee
+                    <input onChange={(evt) => {
+                        const copy = {...customer}
+                        copy.isStaff = evt.target.checked
+                        setCustomer(copy)
+                    }}
+                        type="checkbox" checked="checked" />
+                        <span class="checkmark"></span>
+                    </label> */}
+
+
+
                 <fieldset>
                     <input onChange={(evt) => {
                         const copy = {...customer}
@@ -77,6 +91,10 @@ export const Register = (props) => {
                         type="checkbox" id="isStaff" />
                     <label htmlFor="email"> I am an employee </label>
                 </fieldset>
+
+
+
+
                 <button type="submit"> Register </button>
             </form>
         </>
