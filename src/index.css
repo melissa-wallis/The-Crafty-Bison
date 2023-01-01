@@ -62,6 +62,7 @@ input[type=text] {
     width:100%;
 }
 
+
 input[type=file] {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 12pt;
@@ -78,7 +79,7 @@ input:hover {
 }
 
 input:focus {
-    border-color: #000;
+    outline: solid 2px #c88b85;
 }
 
 textarea {
@@ -95,6 +96,10 @@ textarea {
 
 textarea:hover {
     box-shadow: 0px 0px 25px 8px #e6beb6;
+}
+
+textarea:focus {
+    outline: solid 2px #c88b85;
 }
 
 label {
@@ -117,6 +122,9 @@ select:hover {
     box-shadow: 0px 0px 25px 8px #e6beb6;
 }
 
+select:focus {
+    outline: solid 2px #c88b85;
+}
 body {
     background-color: #fbfaf9;
 }

@@ -24,7 +24,7 @@ export const ItemDetails=() => {
         <div className="item-details-column">
         <div className="item-details-name">{item.name}</div>
         <div className="item-details-description">{item.description}</div>
-        <div className="item-details-price">{item.price} Dollhairs</div>
+        <div className="item-details-price">{item.price}</div>
         </div>
         </div>      
     )

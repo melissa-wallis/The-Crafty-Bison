@@ -87,7 +87,6 @@ export const AddItemForm = () => {
       <fieldset>
         <textarea
           required
-          autoFocus
           type="text"
           className="form-control"
           placeholder="Description"
@@ -102,7 +101,6 @@ export const AddItemForm = () => {
       <fieldset>
         <input
           required
-          autoFocus
           type="text"
           className="form-control"
           placeholder="Price"
