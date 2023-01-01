@@ -49,7 +49,7 @@ export const MiniatureItems = () => {
                         method: "DELETE"
                     })
                         .then(response => response.json())
-                        .then (() => fetch (`http://localhost:8088/items`))
+                        .then (() => fetch (`http://localhost:8088/items?itemTypeId=3`))
                         .then(response => response.json())
                         .then(response => 
                             setItems(response))

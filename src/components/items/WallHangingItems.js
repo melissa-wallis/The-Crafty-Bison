@@ -52,7 +52,7 @@ export const WallHangingItems = () => {
                         method: "DELETE"
                     })
                         .then(response => response.json())
-                        .then (() => fetch (`http://localhost:8088/items`))
+                        .then (() => fetch (`http://localhost:8088/items?itemTypeId=4`))
                         .then(response => response.json())
                         .then(response => 
                             setItems(response))
