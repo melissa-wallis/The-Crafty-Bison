@@ -45,9 +45,6 @@ export const AllItems = () => {
                 /> 
                 </div>
             <div className="item-name">{itemObj.name}</div>
-            {/* <div className="item-description">{itemObj.description}</div>
-            <div className="item-price">{itemObj.price} Dollhairs</div> */}
-
             {
                 bisonUserObject.staff
                 ? <>
