@@ -1,7 +1,4 @@
-//STRETCH GOAL - CUSTOMER VIEW OF STORE
-
-//employee (currently only) view of the store. Renders all the components on the homepage
-
+//customer view of the store. Renders all the components on the homepage
 import { Routes, Route, Outlet } from "react-router-dom"
 import { AllItems } from "../items/AllItems"
 import { CrossStitchItems } from "../items/CrossStitchItems"

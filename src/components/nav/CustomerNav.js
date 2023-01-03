@@ -1,32 +1,25 @@
-//customer nav is the same as employeeNav just without the Add New Item link
-
+//customer nav view (same as employeeNav just without the Add New Item link)
 import { Link, useNavigate } from 'react-router-dom'
-// import BisonLogo4 from '../../assets/BisonLogo4.png'
 
 export const CustomerNav = () => {
-
     const navigate = useNavigate()
     
     return (
     <ul className="navbar">
         <Link className="navbar-item" to="/">
-        <img className="logo-img" src="../../images/BisonLogo4.png" alt="Crafty Bison Logo" />
+            <img className="logo-img" src="../../images/BisonLogo4.png" alt="Crafty Bison Logo" />
         </Link>
-
         <li className="navbar-item">
-        <Link className="navbar-link" to="/crossStitch">Cross Stitch</Link>
+            <Link className="navbar-link" to="/crossStitch">Cross Stitch</Link>
         </li>
-
         <li className="navbar-item">
-        <Link className="navbar-link" to="/embroidery">Embroidery</Link>
+            <Link className="navbar-link" to="/embroidery">Embroidery</Link>
         </li>
-
         <li className="navbar-item">
-        <Link className="navbar-link" to="/miniatures">Miniatures</Link>
+            <Link className="navbar-link" to="/miniatures">Miniatures</Link>
         </li>
-
         <li className="navbar-item">
-        <Link className="navbar-link" to="/wallHangings">Wall Hangings</Link>
+            <Link className="navbar-link" to="/wallHangings">Wall Hangings</Link>
         </li>
         
             {

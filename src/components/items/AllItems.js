@@ -8,7 +8,6 @@ import { Link, useNavigate } from "react-router-dom"
 export const AllItems = () => {
     const [items, setItems] = useState([])
     const navigate = useNavigate()
-    
     const localBisonUser = localStorage.getItem("bison_user")
     const bisonUserObject = JSON.parse(localBisonUser)
 
@@ -25,8 +24,7 @@ export const AllItems = () => {
 
     //navigates to item details view
     const navigateToItemDetails = (itemId) => {
-        navigate(`/${itemId}`)
-    }
+        navigate(`/${itemId}`)}
 
     return (
         <>
@@ -34,17 +32,16 @@ export const AllItems = () => {
         <div className="items-container">
         {items.map((itemObj) => {
             return <div className="item-card" value={itemObj.id} key={itemObj.id}>
-                <div className="img-div">
-                <img
-                src={itemObj.image}
-                alt={itemObj.name}
-                className="item-img"
-                onClick={() => {
-                    navigateToItemDetails(itemObj.id)
-                }}
-                /> 
+                <div>
+                    <img
+                        src={itemObj.image}
+                        alt={itemObj.name}
+                        className="item-img"
+                        onClick={() => {
+                            navigateToItemDetails(itemObj.id)
+                        }}/> 
                 </div>
-            <div className="item-name">{itemObj.name}</div>
+                <div className="item-name">{itemObj.name}</div>
             {
                 bisonUserObject.staff
                 ? <>
@@ -52,9 +49,9 @@ export const AllItems = () => {
                 <button>Edit</button>
             </Link>
             <button className="item-delete" 
-            onClick={(evt) => {
-                evt.preventDefault()
-                fetch (`http://localhost:8088/items/${itemObj.id}`, {
+                onClick={(evt) => {
+                    evt.preventDefault()
+                    fetch (`http://localhost:8088/items/${itemObj.id}`, {
                         method: "DELETE"
                     })
                         .then(response => response.json())
@@ -63,12 +60,10 @@ export const AllItems = () => {
                         .then(response => 
                             setItems(response))
                     }}>Delete</button>
-                </>
+                    </>
                 : ""
             }
-
-
-            </div>
+                </div>
         })}
         </div>
         </>

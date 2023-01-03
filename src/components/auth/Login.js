@@ -1,6 +1,5 @@
 import React, { useState } from "react"
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css"
 
 export const Login = () => {
@@ -20,7 +19,6 @@ export const Login = () => {
                         id: user.id,
                         staff: user.isStaff
                     }))
-
                     navigate("/")
                 }
                 else {
@@ -32,23 +30,23 @@ export const Login = () => {
     return (
         <>
         <img className="hero" src="../../images/Banner.svg"></img>
-                <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Please sign in</h1>
-                    <fieldset>
-                        <input type="email"
-                            value={email}
-                            size="25"
-                            onChange={evt => set(evt.target.value)}
-                            placeholder="Email address"
-                            required autoFocus />
-                    </fieldset>
+            <form className="form-login" onSubmit={handleLogin}>
+                <h1>Please sign in</h1>
                 <fieldset>
-                <Link className="membership" to="/register">Not a member yet?</Link>
+                    <input type="email"
+                        value={email}
+                        size="25"
+                        onChange={evt => set(evt.target.value)}
+                        placeholder="Email address"
+                        required autoFocus />
                 </fieldset>
-                        <button type="submit">
-                            Sign in
-                        </button>
-                </form>
+                <fieldset>
+                    <Link className="membership" to="/register">Not a member yet?</Link>
+                </fieldset>
+                    <button type="submit">
+                        Sign in
+                    </button>
+            </form>
         </>
     )
 }

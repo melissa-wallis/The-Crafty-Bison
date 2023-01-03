@@ -1,5 +1,4 @@
-//employee (currently only) view of the store. Renders all the components on the homepage
-
+//employee view of the store. Renders all the components on the homepage
 import { Routes, Route, Outlet } from "react-router-dom"
 import { AddItemForm } from "../items/AddItemForm"
 import { AllItems } from "../items/AllItems"

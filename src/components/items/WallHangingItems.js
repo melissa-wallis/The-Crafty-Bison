@@ -4,11 +4,9 @@ import { Link, useNavigate } from "react-router-dom"
 export const WallHangingItems = () => {
     const [items, setItems] = useState([])
     const navigate = useNavigate()
-
     const localBisonUser = localStorage.getItem("bison_user")
     const bisonUserObject = JSON.parse(localBisonUser)
 
-    
     useEffect(() => {
         fetch(`http://localhost:8088/items?itemTypeId=4`)
         .then((res) => res.json())
@@ -17,12 +15,10 @@ export const WallHangingItems = () => {
         })
     }, [])
 
-
     //navigates to item details view
     const navigateToItemDetails = (itemId) => {
         navigate(`/${itemId}`)
     }
-
 
     return (
         <div className="items-container">
@@ -30,25 +26,23 @@ export const WallHangingItems = () => {
         return (
             <div className="item-card" key={itemObj.id}>
                 <img
-                src={itemObj.image}
-                alt={itemObj.name}
-                className="item-img"
-                onClick={() => {
-                    navigateToItemDetails(itemObj.id)
-                }}
-                />
-                <div className="item-name">{itemObj.name}</div>
-                
-                {
+                    src={itemObj.image}
+                    alt={itemObj.name}
+                    className="item-img"
+                    onClick={() => {
+                        navigateToItemDetails(itemObj.id)
+                }}/>
+            <div className="item-name">{itemObj.name}</div>
+            {
                 bisonUserObject.staff
                 ? <>
             <Link className="item-edit" to={`/items/${itemObj.id}/edit`}>
                 <button>Edit</button>
             </Link>
             <button className="item-delete" 
-            onClick={(evt) => {
-                evt.preventDefault()
-                fetch (`http://localhost:8088/items/${itemObj.id}`, {
+                onClick={(evt) => {
+                    evt.preventDefault()
+                    fetch (`http://localhost:8088/items/${itemObj.id}`, {
                         method: "DELETE"
                     })
                         .then(response => response.json())
@@ -57,10 +51,9 @@ export const WallHangingItems = () => {
                         .then(response => 
                             setItems(response))
                     }}>Delete</button>
-                </>
+                    </>
                 : ""
             }
-
             </div>
             )
         })}

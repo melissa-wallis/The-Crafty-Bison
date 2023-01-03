@@ -3,7 +3,6 @@ import {EmployeeNav} from "./EmployeeNav"
 import {CustomerNav} from "./CustomerNav"
 
 export const NavBar = () => {
-
     const localBisonUser = localStorage.getItem("bison_user")
     const bisonUserObject = JSON.parse(localBisonUser)
 

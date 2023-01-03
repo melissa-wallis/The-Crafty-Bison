@@ -36,7 +36,6 @@ export const EditItemForm = () => {
     //function that runs when the save button is clicked
     const handleSaveItem = (evt) => {
         evt.preventDefault()
-
         //PUT request modifies the item object
         return fetch(`http://localhost:8088/items/${item.id}`, {
             method: "PUT",
@@ -54,7 +53,6 @@ export const EditItemForm = () => {
                 <input
                 required autoFocus
                 type="text"
-                className="form-control"
                 value={item.name}
                 placeholder="Name"
                 onChange={(evt) => {
@@ -66,9 +64,8 @@ export const EditItemForm = () => {
             </fieldset>
             <fieldset>
                 <textarea
-                required autoFocus
+                required
                 type="text"
-                className="form-control"
                 value={item.description}
                 placeholder="Description"
                 onChange={(evt) => {
@@ -80,9 +77,8 @@ export const EditItemForm = () => {
             </fieldset>
             <fieldset>
                 <input
-                required autoFocus
+                required
                 type="text"
-                className="form-control"
                 value={item.price}
                 placeholder="Price"
                 onChange={(evt) => {
@@ -93,7 +89,8 @@ export const EditItemForm = () => {
                 />
             </fieldset>
             <fieldset>
-                <select 
+                <select
+                required
                 value={item.itemTypeId}
                 onChange={(evt) => {
                     const copy = { ...item };
@@ -107,11 +104,11 @@ export const EditItemForm = () => {
                     }
                 </select>
             </fieldset>
-            <button
-            onClick={(evt) => {
-                handleSaveItem(evt)
-            }}
-            >Save Changes</button>
+                <button
+                onClick={(evt) => {
+                    handleSaveItem(evt)
+                }}
+                >Save Changes</button>
         </form>
         );
-    };
+};

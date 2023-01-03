@@ -56,16 +56,16 @@ export const Register = (props) => {
     return (
         <>
         <img className="hero" src="../../images/Banner.svg"></img>
-            <form className="form--login" onSubmit={handleRegister}>
+            <form className="form-login" onSubmit={handleRegister}>
                 <h1>Please Register</h1>
                 <fieldset>
                     <input onChange={updateCustomer}
-                        type="text" size="25"
+                        type="text" size="25" id="fullName"
                         placeholder="Name" required autoFocus />
                 </fieldset>
                 <fieldset>
                     <input onChange={updateCustomer}
-                        type="email" size="25"
+                        type="email" size="25" id="email"
                         placeholder="Email address" required />
                 </fieldset>
                 <fieldset>

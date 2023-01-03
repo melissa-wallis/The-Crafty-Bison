@@ -34,17 +34,15 @@ export const AddItemForm = () => {
   const handleSaveItem = (evt) => {
     evt.preventDefault();
 
-    //Upload the image to Cloudinary platform
-    //Followed tutorial: https://www.youtube.com/watch?v=Y-VgaRwWS3o
-    const formData = new FormData();
-    //Constructing the form data - add the imported file and upload preset
-    formData.append("file", imageSelected);
-    formData.append("upload_preset", "Crafty-Bison1");
+  //Upload the image to Cloudinary platform
+  //Followed tutorial: https://www.youtube.com/watch?v=Y-VgaRwWS3o
+  const formData = new FormData();
+  //Constructing the form data - add the imported file and upload preset
+  formData.append("file", imageSelected);
+  formData.append("upload_preset", "Crafty-Bison1");
     //Use Axios API to post photo to Cloudinary platform
-    Axios.post(
-      "https://api.cloudinary.com/v1_1/dkst6uh8j/image/upload",
-      formData
-    ).then((response) => {
+  Axios.post("https://api.cloudinary.com/v1_1/dkst6uh8j/image/upload", formData)
+    .then((response) => {
       const itemToSaveToAPI = {
         name: item.name,
         description: item.description,
@@ -71,10 +69,8 @@ export const AddItemForm = () => {
       <h1>Add Item to Store</h1>
       <fieldset>
         <input
-          required
-          autoFocus
+          required autoFocus
           type="text"
-          className="form-control"
           placeholder="Name"
           onChange={(evt) => {
             const copy = { ...item };
@@ -83,12 +79,10 @@ export const AddItemForm = () => {
           }}
         />
       </fieldset>
-
       <fieldset>
         <textarea
           required
           type="text"
-          className="form-control"
           placeholder="Description"
           onChange={(evt) => {
             const copy = { ...item };
@@ -97,12 +91,10 @@ export const AddItemForm = () => {
           }}
         />
       </fieldset>
-
       <fieldset>
         <input
           required
           type="text"
-          className="form-control"
           placeholder="Price"
           onChange={(evt) => {
             const copy = { ...item };
@@ -111,8 +103,6 @@ export const AddItemForm = () => {
           }}
         />
       </fieldset>
-
-
       <fieldset>
         <select
           onChange={(evt) => {
@@ -129,9 +119,9 @@ export const AddItemForm = () => {
           ))}
         </select>
       </fieldset>
-
       <fieldset>
-        <input className="chooseFile"
+        <input 
+          className="chooseFile"
           type="file"
           onChange={(evt) => {
             setImageSelected(evt.target.files[0]);
@@ -140,12 +130,10 @@ export const AddItemForm = () => {
       </fieldset>
 
       <button
-        className="btn"
         onClick={(evt) => {
           handleSaveItem(evt);
-        }}
-      >
-        List Item
+        }}>
+          List Item 
       </button>
     </form>
   );

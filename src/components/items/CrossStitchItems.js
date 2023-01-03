@@ -4,10 +4,8 @@ import { Link, useNavigate } from "react-router-dom"
 export const CrossStitchItems = () => {
     const [items, setItems] = useState([])
     const navigate = useNavigate()
-
     const localBisonUser = localStorage.getItem("bison_user")
     const bisonUserObject = JSON.parse(localBisonUser)
-    
     
     useEffect(() => {
         fetch(`http://localhost:8088/items?itemTypeId=1`)
@@ -17,12 +15,10 @@ export const CrossStitchItems = () => {
         })
     }, [])
 
-
     //navigates to item details view
     const navigateToItemDetails = (itemId) => {
         navigate(`/${itemId}`)
     }
-
 
     return (
         <div className="items-container">
@@ -44,10 +40,10 @@ export const CrossStitchItems = () => {
             <Link className="item-edit" to={`/items/${itemObj.id}/edit`}>
                 <button>Edit</button>
             </Link>
-            <button className="item-delete" 
-            onClick={(evt) => {
-                evt.preventDefault()
-                fetch (`http://localhost:8088/items/${itemObj.id}`, {
+            <button
+                onClick={(evt) => {
+                    evt.preventDefault()
+                    fetch (`http://localhost:8088/items/${itemObj.id}`, {
                         method: "DELETE"
                     })
                         .then(response => response.json())
@@ -59,7 +55,6 @@ export const CrossStitchItems = () => {
                 </>
                 : ""
             }
-
             </div>
             )
         })}
