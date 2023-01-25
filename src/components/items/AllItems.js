@@ -21,7 +21,6 @@ export const AllItems = () => {
         }, []
         )
     
-
     //navigates to item details view
     const navigateToItemDetails = (itemId) => {
         navigate(`/${itemId}`)}
