@@ -5,16 +5,21 @@ The Crafty Bison is a full CRUD React application I built for my front-end capst
 Crafty Bison users have the ability to create a profile as a store owner or customer. All users can view and sort items by type and view each item for further details. "Employees" have the added ability to edit, delete and add new items to the store. 
 
 ## Screenshots
+Login Page:
 ![Login](public/images/Login%20page.png)
 
+HomePage Employee View:
 ![Homepage-Employee View](public/images/Homepage.png)
 
 ![Homepage-Employee View cont](public/images/Owner%20view%20of%20homepage.png)
 
+Add Item Form:
 ![Add Item Form](public/images/Add%20item.png)
 
+Edit Item Form:
 ![Edit Item Form](public/images/Edit%20item.png)
 
+Item Details View:
 ![Item Details View](public/images/Item%20detail%20view.png)
 
 
@@ -26,4 +31,5 @@ Technologies used include: React, React-Router-Dom, Axiom, Cloudinary, CSS, JSON
 
 ## Relevant Links
 ERD: https://dbdiagram.io/d/637276bfc9abfc6111728eb7
+
 Wireframe: https://www.figma.com/file/jhPONgvYZoDVrS8JJJT4SV/The-Crafty-Bison-Wireframe?t=MxMTVImgXl9Pb8Ae-6
