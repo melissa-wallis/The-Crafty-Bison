@@ -7,19 +7,16 @@ Crafty Bison users have the ability to create a profile as a store owner or cust
 ## Screenshots
 ![Login](public/images/Login%20page.png)
 
-![Register](public/images/Register.png)
-
-![Add Item](public/images/Add%20item.png)
-
 ![Homepage-Employee View](public/images/Homepage.png)
 
 ![Homepage-Employee View cont](public/images/Owner%20view%20of%20homepage.png)
 
-![Item Details View](public/images/Item%20detail%20view.png)
-
 ![Add Item Form](public/images/Add%20item.png)
 
 ![Edit Item Form](public/images/Edit%20item.png)
+
+![Item Details View](public/images/Item%20detail%20view.png)
+
 
 ## Demo
 Coming Soon!
