@@ -8,10 +8,8 @@ Crafty Bison users have the ability to create a profile as a store owner or cust
 Login Page:
 ![Login](public/images/Login%20page.png)
 
-HomePage Employee View:
+Homepage (Employee View):
 ![Homepage-Employee View](public/images/Homepage.png)
-
-![Homepage-Employee View cont](public/images/Owner%20view%20of%20homepage.png)
 
 Add Item Form:
 ![Add Item Form](public/images/Add%20item.png)
@@ -24,7 +22,7 @@ Item Details View:
 
 
 ## Demo
-Coming Soon!
+https://www.loom.com/share/1586bcc1d81849858a2d31318c312cb9
 
 ## Technologies
 Technologies used include: React, React-Router-Dom, Axiom, Cloudinary, CSS, JSON Server
