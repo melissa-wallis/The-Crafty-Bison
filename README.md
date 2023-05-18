@@ -25,7 +25,7 @@ Item Details View:
 https://www.loom.com/share/1586bcc1d81849858a2d31318c312cb9
 
 ## Technologies
-Technologies used include: React, React-Router-Dom, Axiom, Cloudinary, CSS, JSON Server
+Tech: HTML, CSS, Javascript and React
 
 ## Relevant Links
 ERD: https://dbdiagram.io/d/637276bfc9abfc6111728eb7
